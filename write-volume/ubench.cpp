@@ -11,7 +11,7 @@
 
 //#define USE_ATOMIC_ADD 1
 //#define USE_ATOMIC_EXCHG 1
-#define USE_ATOMIC_WRITE 1
+//#define USE_ATOMIC_WRITE 1
 
 struct SharedData_t{
 	volatile uint64_t dummy1[CACHELINE_SZ/sizeof(uint64_t)]; // avoid buddy cacheline prefetching
@@ -35,6 +35,17 @@ int main(int argc, char ** argv){
 	ParseArg(argc, argv, nThreads, shareFrac, falseShareFrac, nIter);
 
 	atomic<uint64_t> justToAvoidCompilerOptimization;
+
+#if USE_ATOMIC_EXCHG
+	printf("USE_ATOMIC_EXCHG is activated\n");
+#elif USE_ATOMIC_ADD
+	printf("USE_ATOMIC_ADD is activated\n");
+#elif USE_ATOMIC_WRITE                 
+	printf("USE_ATOMIC_WRITE is activated\n");
+#else
+        assert(0 && "NYI");
+#endif
+
 
 	#pragma omp parallel num_threads(nThreads)
 	{
