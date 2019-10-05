@@ -1,0 +1,45 @@
+ComDetective Accuracy Verification Microbenchmarks
+===============
+These microbenchmarks were used to verify the accuracy of ComDetective in M. Aditya Sasongko, Palwisha Akhtar, Milind Chabbi, Didem Unat, "ComDetective: A Lightweight Communication Detection Tool for Threads", 2019 IEEE/ACM Supercomputing Conference. 
+
+
+Installation
+===============
+To install these microbenchmarks, type the following commands.
+
+make volume_install
+make p2p_install
+
+
+How to Run
+===============
+Before monitoring these microbenchmarks with ComDetective and Linux perf, please assign the installation path of ComDetective to the ComDetective_bin variable and the location of perf executable to the perf_bin variable in the Makefile.
+
+
+Reproducing The Results in the ComDetective Paper
+===============
+
+The results in the paper were generated under the following environment.
+
+- OS Kernel: Linux 4.15.0 with a patch that enables fast address replacement in debug registers. This patch has already been a part of Linux kernel in Linux version 4.18 or above.
+- Hardware: Intel Xeon E5-2640 v4
+
+To reproduce the write-volume verification results presented in the paper (Figure 3), execute the following commands.
+
+# the following command generates the ground truths
+make all_rfo_write
+# the following command generates the total communication counts detected by ComDetective
+make volume_write_verification
+
+To reproduce the false sharing verification results in the paper (Figure 5), execute the following command.
+
+make false_sharing_add_intra_socket_8_threads
+
+To reproduce the read-write verification results in the paper (Figure 6), execute the following command.
+
+make read_write
+
+To reproduce the communication matrices for the point-to-point communication verification as shown in the paper (Figure 7), run the following command.
+
+make p2p
+
