@@ -1,9 +1,9 @@
-ComDetective_bin=/home/aditya/Documents/new_research/comdetective-development/ComDetective-bin
+ComDetective_bin=/mnt/data/home/msasongko17/comdetective_development/ComDetective-bin
 perf_bin=/mnt/data/home/msasongko17/linux/tools/perf
 
 all_rfo_write: all_rfo_write_intra_socket all_rfo_write_inter_socket
 
-all_rfo_write_intra_socket: all_rfo_write_intra_socket_2_threads all_rfo_write_intra_socket_4_threads all_rfo_write_intra_socket_8_threads
+all_rfo_write_intra_socket: all_rfo_write_intra_socket_2_threads all_rfo_write_intra_socket_4_threads all_rfo_write_intra_socket_8_threads all_rfo_write_intra_socket_16_threads
 
 all_rfo_write_intra_socket_2_threads: metric_extractor_install volume_install all_rfo_write_intra_socket_run_2_threads all_rfo_write_intra_socket_extract_metrics_2_threads
 
@@ -124,14 +124,14 @@ all_rfo_write_intra_socket_run_16_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 8 9 10 20 21 22 23 24" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 8 9 20 21 22 23 24 25" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_intra_socket_extract_metrics_16_threads:
 	dump_file="all_rfo_write_intra_socket_16_threads_metrics.txt" ; \
 	echo "all RFO counts" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		string1="all_rfo_write_intra_socket_16_threads_" ; \s
+		string1="all_rfo_write_intra_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
 		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
@@ -329,6 +329,8 @@ volume_write_intra_socket_4_threads: metric_extractor_install volume_install vol
 
 volume_write_intra_socket_8_threads: metric_extractor_install volume_install volume_write_intra_socket_run_8_threads volume_write_intra_socket_extract_metrics_8_threads
 
+volume_write_intra_socket_16_threads: metric_extractor_install volume_install volume_write_intra_socket_run_16_threads volume_write_intra_socket_extract_metrics_16_threads
+
 volume_write_intra_socket_run_2_threads: write-volume/ubench_write  
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		string1="volume_write_intra_socket_2_threads_" ; \
@@ -478,6 +480,58 @@ volume_write_intra_socket_extract_metrics_8_threads:
 	echo "memory overhead" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		string1="volume_write_intra_socket_8_threads_" ; \
+		string2="_stdout.txt" ; \
+		input_file="$$string1$$i$$string2" ; \
+		echo $$input_file ; \
+		./metric_extractor/extract_overhead $$input_file 1 >> $$dump_file ; \
+	done ;
+
+volume_write_intra_socket_run_16_threads: write-volume/ubench_write
+	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+		string1="volume_write_intra_socket_16_threads_" ; \
+		string2="_stdout.txt" ; \
+		dump_file="$$string1$$i$$string2" ; \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 8 9 20 21 22 23 24 25\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/ComDetectiverun -o volume_write_intra_socket_16_threads_$$i  ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 8 9 20 21 22 23 24 25" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/ComDetectiverun -o volume_write_intra_socket_16_threads_$$i ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+	done
+
+volume_write_intra_socket_extract_metrics_16_threads:
+	dump_file="volume_write_intra_socket_16_threads_metrics.txt" ; \
+	echo "inter core all sharing" > $$dump_file ; \
+	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+		./metric_extractor/extract_communication_count volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+	done ; \
+	echo "inter thread all sharing" >> $$dump_file ; \
+	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+		./metric_extractor/extract_communication_count volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+	done ; \
+	echo "inter core true sharing" >> $$dump_file ; \
+	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+		./metric_extractor/extract_communication_count volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+	done ; \
+	echo "inter thread true sharing" >> $$dump_file ; \
+	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+		./metric_extractor/extract_communication_count volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+	done ; \
+	echo "inter core false sharing" >> $$dump_file ; \
+	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+		./metric_extractor/extract_communication_count volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+	done ; \
+	echo "inter thread false sharing" >> $$dump_file ; \
+	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+		./metric_extractor/extract_communication_count volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+	done ; \
+	echo "elapsed time" >> $$dump_file ; \
+	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+		string1="volume_write_intra_socket_16_threads_" ; \
+		string2="_stdout.txt" ; \
+		input_file="$$string1$$i$$string2" ; \
+		echo $$input_file ; \
+		./metric_extractor/extract_overhead $$input_file 0 >> $$dump_file ; \
+	done ; \
+	echo "memory overhead" >> $$dump_file ; \
+	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+		string1="volume_write_intra_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
 		echo $$input_file ; \
