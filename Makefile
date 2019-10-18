@@ -1,6 +1,8 @@
 ComDetective_bin=/mnt/data/home/msasongko17/comdetective_development/ComDetective-bin
 perf_bin=/mnt/data/home/msasongko17/linux/tools/perf
 
+sc_results: all_rfo_write volume_write_verification false_sharing_add_intra_socket_8_threads read_write p2p
+
 all_rfo_write: all_rfo_write_intra_socket all_rfo_write_inter_socket
 
 all_rfo_write_intra_socket: all_rfo_write_intra_socket_2_threads all_rfo_write_intra_socket_4_threads all_rfo_write_intra_socket_8_threads all_rfo_write_intra_socket_16_threads
