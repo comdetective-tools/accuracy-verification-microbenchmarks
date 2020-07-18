@@ -1,5 +1,5 @@
 MRDX_bin=/mnt/data/home/msasongko17/reuse_distance/hpctoolkit-bin
-perf_bin=/mnt/data/home/msasongko17/linux/tools/perf
+perf_bin=/mnt/data/home/msasongko17/linux-5.5.2/tools/perf
 
 standard_results: all_rfo_write volume_write_verification p2p
 
@@ -45,7 +45,7 @@ all_rfo_write_intra_socket_run_2_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_write -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_write -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_intra_socket_extract_metrics_2_threads:
@@ -55,7 +55,7 @@ all_rfo_write_intra_socket_extract_metrics_2_threads:
 		string1="all_rfo_write_intra_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -80,7 +80,7 @@ all_rfo_write_intra_socket_run_3_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_write -n 3 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_write -n 3 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_intra_socket_extract_metrics_3_threads:
@@ -90,7 +90,7 @@ all_rfo_write_intra_socket_extract_metrics_3_threads:
 		string1="all_rfo_write_intra_socket_3_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -115,7 +115,7 @@ all_rfo_write_intra_socket_run_4_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_write -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_write -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_intra_socket_extract_metrics_4_threads:
@@ -125,7 +125,7 @@ all_rfo_write_intra_socket_extract_metrics_4_threads:
 		string1="all_rfo_write_intra_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -150,7 +150,7 @@ all_rfo_write_intra_socket_run_5_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3 4" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_write -n 5 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3 4" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_write -n 5 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_intra_socket_extract_metrics_5_threads:
@@ -160,7 +160,7 @@ all_rfo_write_intra_socket_extract_metrics_5_threads:
 		string1="all_rfo_write_intra_socket_5_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -185,7 +185,7 @@ all_rfo_write_intra_socket_run_6_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_write -n 6 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_write -n 6 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_intra_socket_extract_metrics_6_threads:
@@ -195,7 +195,7 @@ all_rfo_write_intra_socket_extract_metrics_6_threads:
 		string1="all_rfo_write_intra_socket_6_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -220,7 +220,7 @@ all_rfo_write_intra_socket_run_7_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_write -n 7 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_write -n 7 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_intra_socket_extract_metrics_7_threads:
@@ -230,7 +230,7 @@ all_rfo_write_intra_socket_extract_metrics_7_threads:
 		string1="all_rfo_write_intra_socket_7_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -255,7 +255,7 @@ all_rfo_write_intra_socket_run_8_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_write -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_write -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_intra_socket_extract_metrics_8_threads:
@@ -265,7 +265,7 @@ all_rfo_write_intra_socket_extract_metrics_8_threads:
 		string1="all_rfo_write_intra_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -290,7 +290,7 @@ all_rfo_write_intra_socket_run_16_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 8 9 20 21 22 23 24 25" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 8 9 20 21 22 23 24 25" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_intra_socket_extract_metrics_16_threads:
@@ -300,7 +300,7 @@ all_rfo_write_intra_socket_extract_metrics_16_threads:
 		string1="all_rfo_write_intra_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -345,7 +345,7 @@ all_rfo_write_inter_socket_run_2_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_write -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_write -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_inter_socket_extract_metrics_2_threads:
@@ -355,7 +355,7 @@ all_rfo_write_inter_socket_extract_metrics_2_threads:
 		string1="all_rfo_write_inter_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -380,7 +380,7 @@ all_rfo_write_inter_socket_run_3_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_write -n 3 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_write -n 3 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_inter_socket_extract_metrics_3_threads:
@@ -390,7 +390,7 @@ all_rfo_write_inter_socket_extract_metrics_3_threads:
 		string1="all_rfo_write_inter_socket_3_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -415,7 +415,7 @@ all_rfo_write_inter_socket_run_4_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_write -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_write -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_inter_socket_extract_metrics_4_threads:
@@ -425,7 +425,7 @@ all_rfo_write_inter_socket_extract_metrics_4_threads:
 		string1="all_rfo_write_inter_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -450,7 +450,7 @@ all_rfo_write_inter_socket_run_5_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_write -n 5 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_write -n 5 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_inter_socket_extract_metrics_5_threads:
@@ -460,7 +460,7 @@ all_rfo_write_inter_socket_extract_metrics_5_threads:
 		string1="all_rfo_write_inter_socket_5_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -485,7 +485,7 @@ all_rfo_write_inter_socket_run_6_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 10 11 12" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_write -n 6 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 10 11 12" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_write -n 6 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_inter_socket_extract_metrics_6_threads:
@@ -495,7 +495,7 @@ all_rfo_write_inter_socket_extract_metrics_6_threads:
 		string1="all_rfo_write_inter_socket_6_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -520,7 +520,7 @@ all_rfo_write_inter_socket_run_7_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_write -n 7 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_write -n 7 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_inter_socket_extract_metrics_7_threads:
@@ -530,7 +530,7 @@ all_rfo_write_inter_socket_extract_metrics_7_threads:
 		string1="all_rfo_write_inter_socket_7_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -555,7 +555,7 @@ all_rfo_write_inter_socket_run_8_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12 13" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_write -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12 13" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_write -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_inter_socket_extract_metrics_8_threads:
@@ -565,7 +565,7 @@ all_rfo_write_inter_socket_extract_metrics_8_threads:
 		string1="all_rfo_write_inter_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -590,7 +590,7 @@ all_rfo_write_inter_socket_run_16_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_inter_socket_extract_metrics_16_threads:
@@ -600,7 +600,7 @@ all_rfo_write_inter_socket_extract_metrics_16_threads:
 		string1="all_rfo_write_inter_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -664,35 +664,19 @@ volume_write_intra_socket_run_2_threads: write-volume/ubench_write
 		string1="volume_write_intra_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_2_threads_$$i  ./write-volume/ubench_write -n 2 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_2_threads_$$i ./write-volume/ubench_write -n 2 -s $$i -f 0.0 -i 100000000  2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_2_threads_$$i  ./write-volume/ubench_write -n 2 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_2_threads_$$i ./write-volume/ubench_write -n 2 -s $$i -f 0.0 -i 100000000  2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_intra_socket_extract_metrics_2_threads:
 	dump_file="volume_write_intra_socket_2_threads_metrics.txt" ; \
-	echo "inter core all sharing" > $$dump_file ; \
+	echo "inter thread all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_2_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
-	echo "inter thread all sharing" >> $$dump_file ; \
+	echo "inter thread invalidation" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_2_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
-	done ; \
-	echo "inter core true sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_2_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
-	done ; \
-	echo "inter thread true sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_2_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
-	done ; \
-	echo "inter core false sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_2_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
-	done ; \
-	echo "inter thread false sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_2_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -716,8 +700,8 @@ volume_write_intra_socket_run_3_threads: write-volume/ubench_write
 		string1="volume_write_intra_socket_3_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_3_threads_$$i  ./write-volume/ubench_write -n 3 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_3_threads_$$i ./write-volume/ubench_write -n 3 -s $$i -f 0.0 -i 100000000  2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_3_threads_$$i  ./write-volume/ubench_write -n 3 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_3_threads_$$i ./write-volume/ubench_write -n 3 -s $$i -f 0.0 -i 100000000  2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_intra_socket_extract_metrics_3_threads:
@@ -768,34 +752,18 @@ volume_write_intra_socket_run_4_threads: write-volume/ubench_write
 		string1="volume_write_intra_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_4_threads_$$i ./write-volume/ubench_write -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_4_threads_$$i ./write-volume/ubench_write -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_intra_socket_extract_metrics_4_threads:
 	dump_file="volume_write_intra_socket_4_threads_metrics.txt" ; \
-	echo "inter core all sharing" > $$dump_file ; \
+	echo "inter thread all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_4_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
-	echo "inter thread all sharing" >> $$dump_file ; \
+	echo "inter thread invalidation" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_4_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
-	done ; \
-	echo "inter core true sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_4_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
-	done ; \
-	echo "inter thread true sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_4_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
-	done ; \
-	echo "inter core false sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_4_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
-	done ; \
-	echo "inter thread false sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_4_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -819,8 +787,8 @@ volume_write_intra_socket_run_5_threads: write-volume/ubench_write
 		string1="volume_write_intra_socket_5_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_5_threads_$$i  ./write-volume/ubench_write -n 5 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 4" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_5_threads_$$i ./write-volume/ubench_write -n 5 -s $$i -f 0.0 -i 100000000  2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_5_threads_$$i  ./write-volume/ubench_write -n 5 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_5_threads_$$i ./write-volume/ubench_write -n 5 -s $$i -f 0.0 -i 100000000  2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_intra_socket_extract_metrics_5_threads:
@@ -871,8 +839,8 @@ volume_write_intra_socket_run_6_threads: write-volume/ubench_write
 		string1="volume_write_intra_socket_6_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_6_threads_$$i  ./write-volume/ubench_write -n 6 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_6_threads_$$i ./write-volume/ubench_write -n 6 -s $$i -f 0.0 -i 100000000  2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_6_threads_$$i  ./write-volume/ubench_write -n 6 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_6_threads_$$i ./write-volume/ubench_write -n 6 -s $$i -f 0.0 -i 100000000  2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_intra_socket_extract_metrics_6_threads:
@@ -923,8 +891,8 @@ volume_write_intra_socket_run_7_threads: write-volume/ubench_write
 		string1="volume_write_intra_socket_7_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_7_threads_$$i  ./write-volume/ubench_write -n 7 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_7_threads_$$i ./write-volume/ubench_write -n 7 -s $$i -f 0.0 -i 100000000  2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_7_threads_$$i  ./write-volume/ubench_write -n 7 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_7_threads_$$i ./write-volume/ubench_write -n 7 -s $$i -f 0.0 -i 100000000  2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_intra_socket_extract_metrics_7_threads:
@@ -975,35 +943,19 @@ volume_write_intra_socket_run_8_threads: write-volume/ubench_write
 		string1="volume_write_intra_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_8_threads_$$i  ./write-volume/ubench_write -n 8 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_8_threads_$$i ./write-volume/ubench_write -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_8_threads_$$i  ./write-volume/ubench_write -n 8 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_8_threads_$$i ./write-volume/ubench_write -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_intra_socket_extract_metrics_8_threads:
 	dump_file="volume_write_intra_socket_8_threads_metrics.txt" ; \
-	echo "inter core all sharing" > $$dump_file ; \
+	echo "inter thread all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_8_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
-	echo "inter thread all sharing" >> $$dump_file ; \
+	echo "inter thread invalidation" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_8_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
-	done ; \
-	echo "inter core true sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_8_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
-	done ; \
-	echo "inter thread true sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_8_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
-	done ; \
-	echo "inter core false sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_8_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
-	done ; \
-	echo "inter thread false sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_8_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1027,37 +979,20 @@ volume_write_intra_socket_run_16_threads: write-volume/ubench_write
 		string1="volume_write_intra_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 8 9 20 21 22 23 24 25\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_16_threads_$$i  ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 8 9 20 21 22 23 24 25" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_16_threads_$$i ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 8 9 20 21 22 23 24 25\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_16_threads_$$i  ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 8 9 20 21 22 23 24 25" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_intra_socket_16_threads_$$i ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_intra_socket_extract_metrics_16_threads:
 	dump_file="volume_write_intra_socket_16_threads_metrics.txt" ; \
-	echo "inter core all sharing" > $$dump_file ; \
+	echo "inter thread all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
-	echo "inter thread all sharing" >> $$dump_file ; \
+	echo "inter thread invalidation" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
-	echo "inter core true sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
-	done ; \
-	echo "inter thread true sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
-	done ; \
-	echo "inter core false sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
-	done ; \
-	echo "inter thread false sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
-	done ; \
-	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		string1="volume_write_intra_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
@@ -1153,29 +1088,13 @@ volume_write_inter_socket_4_threads: metric_extractor_install volume_install vol
 
 volume_write_inter_socket_extract_metrics_4_threads:
 	dump_file="volume_write_inter_socket_4_threads_metrics.txt" ; \
-	echo "inter core all sharing" > $$dump_file ; \
+	echo "inter thread all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_4_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
-	echo "inter thread all sharing" >> $$dump_file ; \
+	echo "inter thread invalidation" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_4_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
-	done ; \
-	echo "inter core true sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_4_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
-	done ; \
-	echo "inter thread true sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_4_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
-	done ; \
-	echo "inter core false sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_4_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
-	done ; \
-	echo "inter thread false sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_4_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1333,29 +1252,13 @@ volume_write_inter_socket_8_threads: metric_extractor_install volume_install vol
 
 volume_write_inter_socket_extract_metrics_8_threads:
 	dump_file="volume_write_inter_socket_8_threads_metrics.txt" ; \
-	echo "inter core all sharing" > $$dump_file ; \
+	echo "inter thread all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_8_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
-	echo "inter thread all sharing" >> $$dump_file ; \
+	echo "inter thread invalidation" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_8_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
-	done ; \
-	echo "inter core true sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_8_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
-	done ; \
-	echo "inter thread true sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_8_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
-	done ; \
-	echo "inter core false sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_8_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
-	done ; \
-	echo "inter thread false sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_8_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1378,29 +1281,13 @@ volume_write_inter_socket_16_threads: metric_extractor_install volume_install vo
 
 volume_write_inter_socket_extract_metrics_16_threads:
 	dump_file="volume_write_inter_socket_16_threads_metrics.txt" ; \
-	echo "inter core all sharing" > $$dump_file ; \
+	echo "inter thread all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_16_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
-	echo "inter thread all sharing" >> $$dump_file ; \
+	echo "inter thread invalidation" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_16_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
-	done ; \
-	echo "inter core true sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_16_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
-	done ; \
-	echo "inter thread true sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_16_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
-	done ; \
-	echo "inter core false sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_16_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
-	done ; \
-	echo "inter thread false sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_16_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1424,8 +1311,8 @@ volume_write_inter_socket_run_2_threads: write-volume/ubench_write
 		string1="volume_write_inter_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 10\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_2_threads_$$i  ./write-volume/ubench_write -n 2 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_2_threads_$$i ./write-volume/ubench_write -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 10\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_2_threads_$$i  ./write-volume/ubench_write -n 2 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_2_threads_$$i ./write-volume/ubench_write -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_inter_socket_run_3_threads: write-volume/ubench_write
@@ -1433,8 +1320,8 @@ volume_write_inter_socket_run_3_threads: write-volume/ubench_write
 		string1="volume_write_inter_socket_3_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 10\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_3_threads_$$i  ./write-volume/ubench_write -n 3 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_3_threads_$$i ./write-volume/ubench_write -n 3 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 10\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_3_threads_$$i  ./write-volume/ubench_write -n 3 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_3_threads_$$i ./write-volume/ubench_write -n 3 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_inter_socket_run_4_threads: write-volume/ubench_write
@@ -1442,8 +1329,8 @@ volume_write_inter_socket_run_4_threads: write-volume/ubench_write
 		string1="volume_write_inter_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 10 11\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_4_threads_$$i  ./write-volume/ubench_write -n 4 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_4_threads_$$i ./write-volume/ubench_write -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 10 11\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_4_threads_$$i  ./write-volume/ubench_write -n 4 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_4_threads_$$i ./write-volume/ubench_write -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_inter_socket_run_5_threads: write-volume/ubench_write
@@ -1451,8 +1338,8 @@ volume_write_inter_socket_run_5_threads: write-volume/ubench_write
 		string1="volume_write_inter_socket_5_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 10 11\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_5_threads_$$i  ./write-volume/ubench_write -n 5 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_5_threads_$$i ./write-volume/ubench_write -n 5 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 10 11\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_5_threads_$$i  ./write-volume/ubench_write -n 5 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_5_threads_$$i ./write-volume/ubench_write -n 5 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_inter_socket_run_6_threads: write-volume/ubench_write
@@ -1460,8 +1347,8 @@ volume_write_inter_socket_run_6_threads: write-volume/ubench_write
 		string1="volume_write_inter_socket_6_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 10 11 12\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_6_threads_$$i  ./write-volume/ubench_write -n 6 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 10 11 12" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_6_threads_$$i ./write-volume/ubench_write -n 6 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 10 11 12\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_6_threads_$$i  ./write-volume/ubench_write -n 6 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 10 11 12" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_6_threads_$$i ./write-volume/ubench_write -n 6 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_inter_socket_run_7_threads: write-volume/ubench_write
@@ -1469,8 +1356,8 @@ volume_write_inter_socket_run_7_threads: write-volume/ubench_write
 		string1="volume_write_inter_socket_7_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 10 11 12\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_7_threads_$$i  ./write-volume/ubench_write -n 7 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_7_threads_$$i ./write-volume/ubench_write -n 7 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 10 11 12\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_7_threads_$$i  ./write-volume/ubench_write -n 7 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_7_threads_$$i ./write-volume/ubench_write -n 7 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_inter_socket_run_8_threads: write-volume/ubench_write
@@ -1478,8 +1365,8 @@ volume_write_inter_socket_run_8_threads: write-volume/ubench_write
 		string1="volume_write_inter_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 10 11 12 13\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_8_threads_$$i  ./write-volume/ubench_write -n 8 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12 13" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_8_threads_$$i ./write-volume/ubench_write -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 10 11 12 13\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_8_threads_$$i  ./write-volume/ubench_write -n 8 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12 13" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_8_threads_$$i ./write-volume/ubench_write -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_inter_socket_run_16_threads: write-volume/ubench_write
@@ -1487,8 +1374,8 @@ volume_write_inter_socket_run_16_threads: write-volume/ubench_write
 		string1="volume_write_inter_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_16_threads_$$i  ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_16_threads_$$i ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_16_threads_$$i  ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_write_inter_socket_16_threads_$$i ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 all_rfo_add: all_rfo_add_intra_socket all_rfo_add_inter_socket
@@ -1507,7 +1394,7 @@ all_rfo_add_intra_socket_run_2_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_add -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_add -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_add_intra_socket_extract_metrics_2_threads:
@@ -1517,7 +1404,7 @@ all_rfo_add_intra_socket_extract_metrics_2_threads:
 		string1="all_rfo_add_intra_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1542,7 +1429,7 @@ all_rfo_add_intra_socket_run_4_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_add -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_add -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_add_intra_socket_extract_metrics_4_threads:
@@ -1552,7 +1439,7 @@ all_rfo_add_intra_socket_extract_metrics_4_threads:
 		string1="all_rfo_add_intra_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1577,7 +1464,7 @@ all_rfo_add_intra_socket_run_8_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_add -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_add -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_add_intra_socket_extract_metrics_8_threads:
@@ -1587,7 +1474,7 @@ all_rfo_add_intra_socket_extract_metrics_8_threads:
 		string1="all_rfo_add_intra_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1622,7 +1509,7 @@ all_rfo_add_inter_socket_run_2_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_add -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_add -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_add_inter_socket_extract_metrics_2_threads:
@@ -1632,7 +1519,7 @@ all_rfo_add_inter_socket_extract_metrics_2_threads:
 		string1="all_rfo_add_inter_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1657,7 +1544,7 @@ all_rfo_add_inter_socket_run_4_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_add -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_add -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_add_inter_socket_extract_metrics_4_threads:
@@ -1667,7 +1554,7 @@ all_rfo_add_inter_socket_extract_metrics_4_threads:
 		string1="all_rfo_add_inter_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1692,7 +1579,7 @@ all_rfo_add_inter_socket_run_8_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12 13" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_add -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12 13" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_add -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_add_inter_socket_extract_metrics_8_threads:
@@ -1702,7 +1589,7 @@ all_rfo_add_inter_socket_extract_metrics_8_threads:
 		string1="all_rfo_add_inter_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1727,7 +1614,7 @@ all_rfo_add_inter_socket_run_16_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_add -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_add -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_add_inter_socket_extract_metrics_16_threads:
@@ -1737,7 +1624,7 @@ all_rfo_add_inter_socket_extract_metrics_16_threads:
 		string1="all_rfo_add_inter_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1896,8 +1783,8 @@ volume_add_intra_socket_run_2_threads: write-volume/ubench_add
 		string1="volume_add_intra_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_intra_socket_2_threads_$$i  ./write-volume/ubench_add -n 2 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_intra_socket_2_threads_$$i ./write-volume/ubench_add -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_intra_socket_2_threads_$$i  ./write-volume/ubench_add -n 2 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_intra_socket_2_threads_$$i ./write-volume/ubench_add -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_add_intra_socket_run_4_threads: write-volume/ubench_add
@@ -1905,8 +1792,8 @@ volume_add_intra_socket_run_4_threads: write-volume/ubench_add
 		string1="volume_add_intra_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_intra_socket_4_threads_$$i  ./write-volume/ubench_add -n 4 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_intra_socket_4_threads_$$i ./write-volume/ubench_add -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_intra_socket_4_threads_$$i  ./write-volume/ubench_add -n 4 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_intra_socket_4_threads_$$i ./write-volume/ubench_add -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_add_intra_socket_run_8_threads: write-volume/ubench_add
@@ -1914,8 +1801,8 @@ volume_add_intra_socket_run_8_threads: write-volume/ubench_add
 		string1="volume_add_intra_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_intra_socket_8_threads_$$i  ./write-volume/ubench_add -n 8 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_intra_socket_8_threads_$$i ./write-volume/ubench_add -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_intra_socket_8_threads_$$i  ./write-volume/ubench_add -n 8 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_intra_socket_8_threads_$$i ./write-volume/ubench_add -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_add_inter_socket_2_threads: metric_extractor_install volume_install volume_add_inter_socket_run_2_threads volume_add_inter_socket_extract_metrics_2_threads
@@ -2103,8 +1990,8 @@ volume_add_inter_socket_run_2_threads: write-volume/ubench_add
 		string1="volume_add_inter_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 10\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_inter_socket_2_threads_$$i  ./write-volume/ubench_add -n 2 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_inter_socket_2_threads_$$i ./write-volume/ubench_add -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 10\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_inter_socket_2_threads_$$i  ./write-volume/ubench_add -n 2 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_inter_socket_2_threads_$$i ./write-volume/ubench_add -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_add_inter_socket_run_4_threads: write-volume/ubench_add
@@ -2112,8 +1999,8 @@ volume_add_inter_socket_run_4_threads: write-volume/ubench_add
 		string1="volume_add_inter_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 10 11\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_inter_socket_4_threads_$$i  ./write-volume/ubench_add -n 4 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_inter_socket_4_threads_$$i ./write-volume/ubench_add -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 10 11\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_inter_socket_4_threads_$$i  ./write-volume/ubench_add -n 4 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_inter_socket_4_threads_$$i ./write-volume/ubench_add -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_add_inter_socket_run_8_threads: write-volume/ubench_add
@@ -2121,8 +2008,8 @@ volume_add_inter_socket_run_8_threads: write-volume/ubench_add
 		string1="volume_add_inter_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 10 11 12 13\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_inter_socket_8_threads_$$i  ./write-volume/ubench_add -n 8 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12 13" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_inter_socket_8_threads_$$i ./write-volume/ubench_add -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 10 11 12 13\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_inter_socket_8_threads_$$i  ./write-volume/ubench_add -n 8 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12 13" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_inter_socket_8_threads_$$i ./write-volume/ubench_add -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
         done
 
 volume_add_inter_socket_run_16_threads: write-volume/ubench_add
@@ -2130,8 +2017,8 @@ volume_add_inter_socket_run_16_threads: write-volume/ubench_add
 		string1="volume_add_inter_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_inter_socket_16_threads_$$i  ./write-volume/ubench_add -n 16 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_inter_socket_16_threads_$$i ./write-volume/ubench_add -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_inter_socket_16_threads_$$i  ./write-volume/ubench_add -n 16 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_add_inter_socket_16_threads_$$i ./write-volume/ubench_add -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
         done
 
 all_rfo_exchg: all_rfo_exchg_intra_socket all_rfo_exchg_inter_socket
@@ -2150,7 +2037,7 @@ all_rfo_exchg_intra_socket_run_2_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_exchg -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_exchg -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_exchg_intra_socket_extract_metrics_2_threads:
@@ -2160,7 +2047,7 @@ all_rfo_exchg_intra_socket_extract_metrics_2_threads:
 		string1="all_rfo_exchg_intra_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2185,7 +2072,7 @@ all_rfo_exchg_intra_socket_run_4_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_exchg -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_exchg -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_exchg_intra_socket_extract_metrics_4_threads:
@@ -2195,7 +2082,7 @@ all_rfo_exchg_intra_socket_extract_metrics_4_threads:
 		string1="all_rfo_exchg_intra_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2220,7 +2107,7 @@ all_rfo_exchg_intra_socket_run_8_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_exchg -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_exchg -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_exchg_intra_socket_extract_metrics_8_threads:
@@ -2230,7 +2117,7 @@ all_rfo_exchg_intra_socket_extract_metrics_8_threads:
 		string1="all_rfo_exchg_intra_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2265,7 +2152,7 @@ all_rfo_exchg_inter_socket_run_2_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_exchg -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_exchg -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_exchg_inter_socket_extract_metrics_2_threads:
@@ -2275,7 +2162,7 @@ all_rfo_exchg_inter_socket_extract_metrics_2_threads:
 		string1="all_rfo_exchg_inter_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2300,7 +2187,7 @@ all_rfo_exchg_inter_socket_run_4_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_exchg -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_exchg -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_exchg_inter_socket_extract_metrics_4_threads:
@@ -2310,7 +2197,7 @@ all_rfo_exchg_inter_socket_extract_metrics_4_threads:
 		string1="all_rfo_exchg_inter_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2335,7 +2222,7 @@ all_rfo_exchg_inter_socket_run_8_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12 13" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_exchg -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12 13" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_exchg -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_exchg_inter_socket_extract_metrics_8_threads:
@@ -2345,7 +2232,7 @@ all_rfo_exchg_inter_socket_extract_metrics_8_threads:
 		string1="all_rfo_exchg_inter_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2370,7 +2257,7 @@ all_rfo_exchg_inter_socket_run_16_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e re224 ./write-volume/ubench_exchg -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r2224 ./write-volume/ubench_exchg -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_exchg_inter_socket_extract_metrics_16_threads:
@@ -2380,7 +2267,7 @@ all_rfo_exchg_inter_socket_extract_metrics_16_threads:
 		string1="all_rfo_exchg_inter_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 2 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2540,8 +2427,8 @@ volume_exchg_intra_socket_run_2_threads: write-volume/ubench_exchg
 		string1="volume_exchg_intra_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_intra_socket_2_threads_$$i  ./write-volume/ubench_exchg -n 2 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_intra_socket_2_threads_$$i ./write-volume/ubench_exchg -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_intra_socket_2_threads_$$i  ./write-volume/ubench_exchg -n 2 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_intra_socket_2_threads_$$i ./write-volume/ubench_exchg -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_exchg_intra_socket_run_4_threads: write-volume/ubench_exchg
@@ -2549,8 +2436,8 @@ volume_exchg_intra_socket_run_4_threads: write-volume/ubench_exchg
 		string1="volume_exchg_intra_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_intra_socket_4_threads_$$i  ./write-volume/ubench_exchg -n 4 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_intra_socket_4_threads_$$i ./write-volume/ubench_exchg -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_intra_socket_4_threads_$$i  ./write-volume/ubench_exchg -n 4 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_intra_socket_4_threads_$$i ./write-volume/ubench_exchg -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_exchg_intra_socket_run_8_threads: write-volume/ubench_exchg
@@ -2558,8 +2445,8 @@ volume_exchg_intra_socket_run_8_threads: write-volume/ubench_exchg
 		string1="volume_exchg_intra_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_intra_socket_8_threads_$$i  ./write-volume/ubench_exchg -n 8 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_intra_socket_8_threads_$$i ./write-volume/ubench_exchg -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_intra_socket_8_threads_$$i  ./write-volume/ubench_exchg -n 8 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_intra_socket_8_threads_$$i ./write-volume/ubench_exchg -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_exchg_inter_socket_2_threads: metric_extractor_install volume_install volume_exchg_inter_socket_run_2_threads volume_exchg_inter_socket_extract_metrics_2_threads
@@ -2747,8 +2634,8 @@ volume_exchg_inter_socket_run_2_threads: write-volume/ubench_exchg
 		string1="volume_exchg_inter_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 10\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_inter_socket_2_threads_$$i  ./write-volume/ubench_exchg -n 2 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_inter_socket_2_threads_$$i ./write-volume/ubench_exchg -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 10\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_inter_socket_2_threads_$$i  ./write-volume/ubench_exchg -n 2 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_inter_socket_2_threads_$$i ./write-volume/ubench_exchg -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_exchg_inter_socket_run_4_threads: write-volume/ubench_exchg
@@ -2756,8 +2643,8 @@ volume_exchg_inter_socket_run_4_threads: write-volume/ubench_exchg
 		string1="volume_exchg_inter_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 10 11\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_inter_socket_4_threads_$$i  ./write-volume/ubench_exchg -n 4 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_inter_socket_4_threads_$$i ./write-volume/ubench_exchg -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 10 11\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_inter_socket_4_threads_$$i  ./write-volume/ubench_exchg -n 4 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_inter_socket_4_threads_$$i ./write-volume/ubench_exchg -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_exchg_inter_socket_run_8_threads: write-volume/ubench_exchg
@@ -2765,8 +2652,8 @@ volume_exchg_inter_socket_run_8_threads: write-volume/ubench_exchg
 		string1="volume_exchg_inter_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 10 11 12 13\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_inter_socket_8_threads_$$i  ./write-volume/ubench_exchg -n 8 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12 13" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_inter_socket_8_threads_$$i ./write-volume/ubench_exchg -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 10 11 12 13\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_inter_socket_8_threads_$$i  ./write-volume/ubench_exchg -n 8 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12 13" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_inter_socket_8_threads_$$i ./write-volume/ubench_exchg -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_exchg_inter_socket_run_16_threads: write-volume/ubench_exchg
@@ -2774,8 +2661,8 @@ volume_exchg_inter_socket_run_16_threads: write-volume/ubench_exchg
 		string1="volume_exchg_inter_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_inter_socket_16_threads_$$i  ./write-volume/ubench_exchg -n 16 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_inter_socket_16_threads_$$i ./write-volume/ubench_exchg -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_inter_socket_16_threads_$$i  ./write-volume/ubench_exchg -n 16 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o volume_exchg_inter_socket_16_threads_$$i ./write-volume/ubench_exchg -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 false_sharing_verification: false_sharing_write_verification false_sharing_add_verification  false_sharing_exchg_verification
@@ -2838,8 +2725,8 @@ false_sharing_write_intra_socket_run_2_threads:
 		string1="false_sharing_write_intra_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_intra_socket_2_threads_$$i  ./write-volume/ubench_write -n 2 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_intra_socket_2_threads_$$i ./write-volume/ubench_write -n 2 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_intra_socket_2_threads_$$i  ./write-volume/ubench_write -n 2 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_intra_socket_2_threads_$$i ./write-volume/ubench_write -n 2 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
         done
 
 false_sharing_write_intra_socket_4_threads: metric_extractor_install volume_install false_sharing_write_intra_socket_run_4_threads false_sharing_write_intra_socket_extract_metrics_4_threads
@@ -2892,8 +2779,8 @@ false_sharing_write_intra_socket_run_4_threads:
 		string1="false_sharing_write_intra_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_intra_socket_4_threads_$$i  ./write-volume/ubench_write -n 4 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_intra_socket_4_threads_$$i ./write-volume/ubench_write -n 4 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_intra_socket_4_threads_$$i  ./write-volume/ubench_write -n 4 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_intra_socket_4_threads_$$i ./write-volume/ubench_write -n 4 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
         done
 
 false_sharing_write_intra_socket_8_threads: metric_extractor_install volume_install false_sharing_write_intra_socket_run_8_threads false_sharing_write_intra_socket_extract_metrics_8_threads
@@ -2946,8 +2833,8 @@ false_sharing_write_intra_socket_run_8_threads:
 		string1="false_sharing_write_intra_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_intra_socket_8_threads_$$i  ./write-volume/ubench_write -n 8 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_intra_socket_8_threads_$$i ./write-volume/ubench_write -n 8 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_intra_socket_8_threads_$$i  ./write-volume/ubench_write -n 8 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_intra_socket_8_threads_$$i ./write-volume/ubench_write -n 8 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
         done
 
 false_sharing_write_inter_socket: false_sharing_write_inter_socket_2_threads false_sharing_write_inter_socket_4_threads false_sharing_write_inter_socket_8_threads false_sharing_write_inter_socket_16_threads
@@ -3002,8 +2889,8 @@ false_sharing_write_inter_socket_run_2_threads:
 		string1="false_sharing_write_inter_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 10\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_inter_socket_2_threads_$$i  ./write-volume/ubench_write -n 2 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_inter_socket_2_threads_$$i ./write-volume/ubench_write -n 2 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 10\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_inter_socket_2_threads_$$i  ./write-volume/ubench_write -n 2 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_inter_socket_2_threads_$$i ./write-volume/ubench_write -n 2 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
         done
 
 false_sharing_write_inter_socket_4_threads: metric_extractor_install volume_install false_sharing_write_inter_socket_run_4_threads false_sharing_write_inter_socket_extract_metrics_4_threads
@@ -3056,8 +2943,8 @@ false_sharing_write_inter_socket_run_4_threads:
 		string1="false_sharing_write_inter_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 10 11\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_inter_socket_4_threads_$$i  ./write-volume/ubench_write -n 4 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_inter_socket_4_threads_$$i ./write-volume/ubench_write -n 4 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 10 11\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_inter_socket_4_threads_$$i  ./write-volume/ubench_write -n 4 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_inter_socket_4_threads_$$i ./write-volume/ubench_write -n 4 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 false_sharing_write_inter_socket_8_threads: metric_extractor_install volume_install false_sharing_write_inter_socket_run_8_threads false_sharing_write_inter_socket_extract_metrics_8_threads
@@ -3110,8 +2997,8 @@ false_sharing_write_inter_socket_run_8_threads:
 		string1="false_sharing_write_inter_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 10 11 12 13\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_inter_socket_8_threads_$$i  ./write-volume/ubench_write -n 8 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12 13" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_inter_socket_8_threads_$$i ./write-volume/ubench_write -n 8 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 10 11 12 13\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_inter_socket_8_threads_$$i  ./write-volume/ubench_write -n 8 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12 13" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_inter_socket_8_threads_$$i ./write-volume/ubench_write -n 8 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
         done
 
 false_sharing_write_inter_socket_16_threads: metric_extractor_install volume_install false_sharing_write_inter_socket_run_16_threads false_sharing_write_inter_socket_extract_metrics_16_threads
@@ -3164,8 +3051,8 @@ false_sharing_write_inter_socket_run_16_threads:
 		string1="false_sharing_write_inter_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_inter_socket_16_threads_$$i  ./write-volume/ubench_write -n 16 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_inter_socket_16_threads_$$i ./write-volume/ubench_write -n 16 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_inter_socket_16_threads_$$i  ./write-volume/ubench_write -n 16 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_write_inter_socket_16_threads_$$i ./write-volume/ubench_write -n 16 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
         done
 
 false_sharing_add_intra_socket: false_sharing_add_intra_socket_2_threads false_sharing_add_intra_socket_4_threads false_sharing_add_intra_socket_8_threads
@@ -3220,8 +3107,8 @@ false_sharing_add_intra_socket_run_2_threads:
 		string1="false_sharing_add_intra_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_intra_socket_2_threads_$$i  ./write-volume/ubench_add -n 2 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_intra_socket_2_threads_$$i ./write-volume/ubench_add -n 2 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_intra_socket_2_threads_$$i  ./write-volume/ubench_add -n 2 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_intra_socket_2_threads_$$i ./write-volume/ubench_add -n 2 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 false_sharing_add_intra_socket_4_threads: metric_extractor_install volume_install false_sharing_add_intra_socket_run_4_threads false_sharing_add_intra_socket_extract_metrics_4_threads
@@ -3274,8 +3161,8 @@ false_sharing_add_intra_socket_run_4_threads:
 		string1="false_sharing_add_intra_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_intra_socket_4_threads_$$i  ./write-volume/ubench_add -n 4 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_intra_socket_4_threads_$$i ./write-volume/ubench_add -n 4 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_intra_socket_4_threads_$$i  ./write-volume/ubench_add -n 4 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_intra_socket_4_threads_$$i ./write-volume/ubench_add -n 4 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 false_sharing_add_intra_socket_8_threads: metric_extractor_install volume_install false_sharing_add_intra_socket_run_8_threads false_sharing_add_intra_socket_extract_metrics_8_threads
@@ -3328,8 +3215,8 @@ false_sharing_add_intra_socket_run_8_threads:
 		string1="false_sharing_add_intra_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_intra_socket_8_threads_$$i  ./write-volume/ubench_add -n 8 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_intra_socket_8_threads_$$i ./write-volume/ubench_add -n 8 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_intra_socket_8_threads_$$i  ./write-volume/ubench_add -n 8 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_intra_socket_8_threads_$$i ./write-volume/ubench_add -n 8 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 false_sharing_add_inter_socket: false_sharing_add_inter_socket_2_threads false_sharing_add_inter_socket_4_threads false_sharing_add_inter_socket_8_threads false_sharing_add_inter_socket_16_threads
@@ -3384,8 +3271,8 @@ false_sharing_add_inter_socket_run_2_threads:
 		string1="false_sharing_add_inter_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 10\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_inter_socket_2_threads_$$i  ./write-volume/ubench_add -n 2 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_inter_socket_2_threads_$$i ./write-volume/ubench_add -n 2 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 10\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_inter_socket_2_threads_$$i  ./write-volume/ubench_add -n 2 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_inter_socket_2_threads_$$i ./write-volume/ubench_add -n 2 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 false_sharing_add_inter_socket_4_threads: metric_extractor_install volume_install false_sharing_add_inter_socket_run_4_threads false_sharing_add_inter_socket_extract_metrics_4_threads
@@ -3438,8 +3325,8 @@ false_sharing_add_inter_socket_run_4_threads:
 		string1="false_sharing_add_inter_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 10 11\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_inter_socket_4_threads_$$i  ./write-volume/ubench_add -n 4 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_inter_socket_4_threads_$$i ./write-volume/ubench_add -n 4 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 10 11\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_inter_socket_4_threads_$$i  ./write-volume/ubench_add -n 4 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_inter_socket_4_threads_$$i ./write-volume/ubench_add -n 4 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
         done
 
 false_sharing_add_inter_socket_8_threads: metric_extractor_install volume_install false_sharing_add_inter_socket_run_8_threads false_sharing_add_inter_socket_extract_metrics_8_threads
@@ -3492,8 +3379,8 @@ false_sharing_add_inter_socket_run_8_threads:
 		string1="false_sharing_add_inter_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 10 11 12 13\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_inter_socket_8_threads_$$i  ./write-volume/ubench_add -n 8 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12 13" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_inter_socket_8_threads_$$i ./write-volume/ubench_add -n 8 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 10 11 12 13\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_inter_socket_8_threads_$$i  ./write-volume/ubench_add -n 8 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12 13" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_inter_socket_8_threads_$$i ./write-volume/ubench_add -n 8 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
         done
 
 false_sharing_add_inter_socket_16_threads: metric_extractor_install volume_install false_sharing_add_inter_socket_run_16_threads false_sharing_add_inter_socket_extract_metrics_16_threads
@@ -3546,8 +3433,8 @@ false_sharing_add_inter_socket_run_16_threads:
 		string1="false_sharing_add_inter_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_inter_socket_16_threads_$$i  ./write-volume/ubench_add -n 16 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_inter_socket_16_threads_$$i ./write-volume/ubench_add -n 16 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_inter_socket_16_threads_$$i  ./write-volume/ubench_add -n 16 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_add_inter_socket_16_threads_$$i ./write-volume/ubench_add -n 16 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 false_sharing_exchg_intra_socket: false_sharing_exchg_intra_socket_2_threads false_sharing_exchg_intra_socket_4_threads false_sharing_exchg_intra_socket_8_threads
@@ -3602,8 +3489,8 @@ false_sharing_exchg_intra_socket_run_2_threads:
 		string1="false_sharing_exchg_intra_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_intra_socket_2_threads_$$i  ./write-volume/ubench_exchg -n 2 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_intra_socket_2_threads_$$i ./write-volume/ubench_exchg -n 2 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_intra_socket_2_threads_$$i  ./write-volume/ubench_exchg -n 2 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_intra_socket_2_threads_$$i ./write-volume/ubench_exchg -n 2 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 false_sharing_exchg_intra_socket_4_threads: metric_extractor_install volume_install false_sharing_exchg_intra_socket_run_4_threads false_sharing_exchg_intra_socket_extract_metrics_4_threads
@@ -3656,8 +3543,8 @@ false_sharing_exchg_intra_socket_run_4_threads:
 		string1="false_sharing_exchg_intra_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_intra_socket_4_threads_$$i  ./write-volume/ubench_exchg -n 4 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_intra_socket_4_threads_$$i ./write-volume/ubench_exchg -n 4 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_intra_socket_4_threads_$$i  ./write-volume/ubench_exchg -n 4 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_intra_socket_4_threads_$$i ./write-volume/ubench_exchg -n 4 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
         done
 
 false_sharing_exchg_intra_socket_8_threads: metric_extractor_install volume_install false_sharing_exchg_intra_socket_run_8_threads false_sharing_exchg_intra_socket_extract_metrics_8_threads
@@ -3710,8 +3597,8 @@ false_sharing_exchg_intra_socket_run_8_threads:
 		string1="false_sharing_exchg_intra_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_intra_socket_8_threads_$$i  ./write-volume/ubench_exchg -n 8 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_intra_socket_8_threads_$$i ./write-volume/ubench_exchg -n 8 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_intra_socket_8_threads_$$i  ./write-volume/ubench_exchg -n 8 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_intra_socket_8_threads_$$i ./write-volume/ubench_exchg -n 8 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 false_sharing_exchg_inter_socket: false_sharing_exchg_inter_socket_2_threads false_sharing_exchg_inter_socket_4_threads false_sharing_exchg_inter_socket_8_threads false_sharing_exchg_inter_socket_16_threads
@@ -3766,8 +3653,8 @@ false_sharing_exchg_inter_socket_run_2_threads:
 		string1="false_sharing_exchg_inter_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 10\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_inter_socket_2_threads_$$i  ./write-volume/ubench_exchg -n 2 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_inter_socket_2_threads_$$i ./write-volume/ubench_exchg -n 2 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 10\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_inter_socket_2_threads_$$i  ./write-volume/ubench_exchg -n 2 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 10" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_inter_socket_2_threads_$$i ./write-volume/ubench_exchg -n 2 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 false_sharing_exchg_inter_socket_4_threads: metric_extractor_install volume_install false_sharing_exchg_inter_socket_run_4_threads false_sharing_exchg_inter_socket_extract_metrics_4_threads
@@ -3820,8 +3707,8 @@ false_sharing_exchg_inter_socket_run_4_threads:
 		string1="false_sharing_exchg_inter_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 10 11\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_inter_socket_4_threads_$$i  ./write-volume/ubench_exchg -n 4 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_inter_socket_4_threads_$$i ./write-volume/ubench_exchg -n 4 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 10 11\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_inter_socket_4_threads_$$i  ./write-volume/ubench_exchg -n 4 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 10 11" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_inter_socket_4_threads_$$i ./write-volume/ubench_exchg -n 4 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 false_sharing_exchg_inter_socket_8_threads: metric_extractor_install volume_install false_sharing_exchg_inter_socket_run_8_threads false_sharing_exchg_inter_socket_extract_metrics_8_threads
@@ -3874,8 +3761,8 @@ false_sharing_exchg_inter_socket_run_8_threads:
 		string1="false_sharing_exchg_inter_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 10 11 12 13\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_inter_socket_8_threads_$$i  ./write-volume/ubench_exchg -n 8 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12 13" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_inter_socket_8_threads_$$i ./write-volume/ubench_exchg -n 8 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 10 11 12 13\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_inter_socket_8_threads_$$i  ./write-volume/ubench_exchg -n 8 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 10 11 12 13" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_inter_socket_8_threads_$$i ./write-volume/ubench_exchg -n 8 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 false_sharing_exchg_inter_socket_16_threads: metric_extractor_install volume_install false_sharing_exchg_inter_socket_run_16_threads false_sharing_exchg_inter_socket_extract_metrics_16_threads
@@ -3928,24 +3815,24 @@ false_sharing_exchg_inter_socket_run_16_threads:
 		string1="false_sharing_exchg_inter_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_inter_socket_16_threads_$$i  ./write-volume/ubench_exchg -n 16 -s 1.0 -f $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_inter_socket_16_threads_$$i ./write-volume/ubench_exchg -n 16 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_inter_socket_16_threads_$$i  ./write-volume/ubench_exchg -n 16 -s 1.0 -f $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o false_sharing_exchg_inter_socket_16_threads_$$i ./write-volume/ubench_exchg -n 16 -s 1.0 -f $$i -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 p2p: metric_extractor_install p2p_install p2p_run p2p_extract_metrics
 
 p2p_run:
-	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_0_1 ./read-write-p2p/ubench -g 2 -n 4 -s 0.0 1.0 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_0_1_stdout.txt
-	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_01_09 ./read-write-p2p/ubench -g 2 -n 4 -s 0.1 0.9 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_01_09_stdout.txt
-	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_02_08 ./read-write-p2p/ubench -g 2 -n 4 -s 0.2 0.8 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_02_08_stdout.txt
-	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_03_07 ./read-write-p2p/ubench -g 2 -n 4 -s 0.3 0.7 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_03_07_stdout.txt
-	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_04_06 ./read-write-p2p/ubench -g 2 -n 4 -s 0.4 0.6 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_04_06_stdout.txt
-	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_05_05 ./read-write-p2p/ubench -g 2 -n 4 -s 0.5 0.5 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_05_05_stdout.txt
-	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_06_04 ./read-write-p2p/ubench -g 2 -n 4 -s 0.6 0.4 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_06_04_stdout.txt
-	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_07_03 ./read-write-p2p/ubench -g 2 -n 4 -s 0.7 0.3 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_07_03_stdout.txt
-	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_08_02 ./read-write-p2p/ubench -g 2 -n 4 -s 0.8 0.2 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_08_02_stdout.txt
-	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_09_01 ./read-write-p2p/ubench -g 2 -n 4 -s 0.9 0.1 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_09_01_stdout.txt
-	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_1_0 ./read-write-p2p/ubench -g 2 -n 4 -s 1.0 0.0 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_1_0_stdout.txt
+	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_0_1 ./read-write-p2p/ubench -g 2 -n 4 -s 0.0 1.0 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_0_1_stdout.txt
+	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_01_09 ./read-write-p2p/ubench -g 2 -n 4 -s 0.1 0.9 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_01_09_stdout.txt
+	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_02_08 ./read-write-p2p/ubench -g 2 -n 4 -s 0.2 0.8 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_02_08_stdout.txt
+	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_03_07 ./read-write-p2p/ubench -g 2 -n 4 -s 0.3 0.7 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_03_07_stdout.txt
+	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_04_06 ./read-write-p2p/ubench -g 2 -n 4 -s 0.4 0.6 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_04_06_stdout.txt
+	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_05_05 ./read-write-p2p/ubench -g 2 -n 4 -s 0.5 0.5 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_05_05_stdout.txt
+	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_06_04 ./read-write-p2p/ubench -g 2 -n 4 -s 0.6 0.4 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_06_04_stdout.txt
+	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_07_03 ./read-write-p2p/ubench -g 2 -n 4 -s 0.7 0.3 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_07_03_stdout.txt
+	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_08_02 ./read-write-p2p/ubench -g 2 -n 4 -s 0.8 0.2 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_08_02_stdout.txt
+	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_09_01 ./read-write-p2p/ubench -g 2 -n 4 -s 0.9 0.1 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_09_01_stdout.txt
+	GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o p2p_run_1_0 ./read-write-p2p/ubench -g 2 -n 4 -s 1.0 0.0 -d 2 2 -t 0 1 2 3 -i 100000000 2>&1 | tee p2p_1_0_stdout.txt
 
 p2p_extract_metrics:
 	dump_file="p2p_metrics.txt" ; \
@@ -4096,8 +3983,8 @@ read_write_2_threads_run:
 		string1="read_write_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o read_write_2_threads_$$i ./read-write-p2p/ubench -g 1 -n 2 -s 1.0 -d 2 -t 0 1 -r 0.0 $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o read_write_2_threads_$$i ./read-write-p2p/ubench -g 1 -n 2 -s 1.0 -d 2 -t 0 1 -r 0.0 $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o read_write_2_threads_$$i ./read-write-p2p/ubench -g 1 -n 2 -s 1.0 -d 2 -t 0 1 -r 0.0 $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o read_write_2_threads_$$i ./read-write-p2p/ubench -g 1 -n 2 -s 1.0 -d 2 -t 0 1 -r 0.0 $$i -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 read_write_4_threads: metric_extractor_install p2p_install read_write_4_threads_run read_write_4_threads_extract_metrics
@@ -4148,8 +4035,8 @@ read_write_4_threads_run:
 		string1="read_write_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o read_write_4_threads_$$i ./read-write-p2p/ubench -g 1 -n 4 -s 1.0 -d 4 -t 0 1 2 3 -r 0.0 $$i $$i $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o read_write_4_threads_$$i ./read-write-p2p/ubench -g 1 -n 4 -s 1.0 -d 4 -t 0 1 2 3 -r 0.0 $$i $$i $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o read_write_4_threads_$$i ./read-write-p2p/ubench -g 1 -n 4 -s 1.0 -d 4 -t 0 1 2 3 -r 0.0 $$i $$i $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o read_write_4_threads_$$i ./read-write-p2p/ubench -g 1 -n 4 -s 1.0 -d 4 -t 0 1 2 3 -r 0.0 $$i $$i $$i -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 read_write_8_threads: metric_extractor_install p2p_install read_write_8_threads_run read_write_8_threads_extract_metrics
@@ -4200,8 +4087,8 @@ read_write_8_threads_run:
 		string1="read_write_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o read_write_8_threads_$$i ./read-write-p2p/ubench -g 1 -n 8 -s 1.0 -d 8 -t 0 1 2 3 4 5 6 7 -r 0.0 $$i $$i $$i $$i $$i $$i $$i -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_REUSE_MT -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o read_write_8_threads_$$i ./read-write-p2p/ubench -g 1 -n 8 -s 1.0 -d 8 -t 0 1 2 3 4 5 6 7 -r 0.0 $$i $$i $$i $$i $$i $$i $$i -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o read_write_8_threads_$$i ./read-write-p2p/ubench -g 1 -n 8 -s 1.0 -d 8 -t 0 1 2 3 4 5 6 7 -r 0.0 $$i $$i $$i $$i $$i $$i $$i -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${MRDX_bin}/bin/hpcrun -e WP_MT_REUSE -e MEM_UOPS_RETIRED:ALL_STORES@100000 -e MEM_UOPS_RETIRED:ALL_LOADS@100000 -o read_write_8_threads_$$i ./read-write-p2p/ubench -g 1 -n 8 -s 1.0 -d 8 -t 0 1 2 3 4 5 6 7 -r 0.0 $$i $$i $$i $$i $$i $$i $$i -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 metric_extractor_install:
