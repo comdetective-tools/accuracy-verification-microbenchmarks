@@ -1,4 +1,4 @@
-MRDX_bin=/mnt/data/home/msasongko17/cross-hardware-research/with_adamant/hpctoolkit-bin
+MRDX_bin=/mnt/data/home/msasongko17/reuse_distance/hpctoolkit-bin
 perf_bin=/mnt/data/home/msasongko17/linux/tools/perf
 
 standard_results: all_rfo_write volume_write_verification p2p
@@ -1078,29 +1078,13 @@ volume_write_inter_socket_2_threads: metric_extractor_install volume_install vol
 
 volume_write_inter_socket_extract_metrics_2_threads:
 	dump_file="volume_write_inter_socket_2_threads_metrics.txt" ; \
-	echo "inter core all sharing" > $$dump_file ; \
+	echo "inter thread all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		./metric_extractor/extract_communication_count volume_write_inter_socket_2_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
-	echo "inter thread all sharing" >> $$dump_file ; \
+	echo "inter thread invalidation" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		./metric_extractor/extract_communication_count volume_write_inter_socket_2_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
-	done ; \
-	echo "inter core true sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_2_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
-	done ; \
-	echo "inter thread true sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_2_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
-	done ; \
-	echo "inter core false sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_2_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
-	done ; \
-	echo "inter thread false sharing" >> $$dump_file ; \
-	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_2_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
