@@ -55,7 +55,7 @@ all_rfo_write_intra_socket_extract_metrics_2_threads:
 		string1="all_rfo_write_intra_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -90,7 +90,7 @@ all_rfo_write_intra_socket_extract_metrics_3_threads:
 		string1="all_rfo_write_intra_socket_3_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -125,7 +125,7 @@ all_rfo_write_intra_socket_extract_metrics_4_threads:
 		string1="all_rfo_write_intra_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -160,7 +160,7 @@ all_rfo_write_intra_socket_extract_metrics_5_threads:
 		string1="all_rfo_write_intra_socket_5_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -195,7 +195,7 @@ all_rfo_write_intra_socket_extract_metrics_6_threads:
 		string1="all_rfo_write_intra_socket_6_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -230,7 +230,7 @@ all_rfo_write_intra_socket_extract_metrics_7_threads:
 		string1="all_rfo_write_intra_socket_7_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -265,7 +265,7 @@ all_rfo_write_intra_socket_extract_metrics_8_threads:
 		string1="all_rfo_write_intra_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -300,7 +300,7 @@ all_rfo_write_intra_socket_extract_metrics_16_threads:
 		string1="all_rfo_write_intra_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -355,7 +355,7 @@ all_rfo_write_inter_socket_extract_metrics_2_threads:
 		string1="all_rfo_write_inter_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -390,7 +390,7 @@ all_rfo_write_inter_socket_extract_metrics_3_threads:
 		string1="all_rfo_write_inter_socket_3_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -425,7 +425,7 @@ all_rfo_write_inter_socket_extract_metrics_4_threads:
 		string1="all_rfo_write_inter_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -460,7 +460,7 @@ all_rfo_write_inter_socket_extract_metrics_5_threads:
 		string1="all_rfo_write_inter_socket_5_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -495,7 +495,7 @@ all_rfo_write_inter_socket_extract_metrics_6_threads:
 		string1="all_rfo_write_inter_socket_6_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -530,7 +530,7 @@ all_rfo_write_inter_socket_extract_metrics_7_threads:
 		string1="all_rfo_write_inter_socket_7_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -565,7 +565,7 @@ all_rfo_write_inter_socket_extract_metrics_8_threads:
 		string1="all_rfo_write_inter_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -600,7 +600,7 @@ all_rfo_write_inter_socket_extract_metrics_16_threads:
 		string1="all_rfo_write_inter_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -672,27 +672,27 @@ volume_write_intra_socket_extract_metrics_2_threads:
 	dump_file="volume_write_intra_socket_2_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_2_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_2_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_2_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_2_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_2_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_2_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_2_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_2_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_2_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_2_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_2_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_2_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -724,27 +724,27 @@ volume_write_intra_socket_extract_metrics_3_threads:
 	dump_file="volume_write_intra_socket_3_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_3_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_3_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_3_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_3_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_3_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_3_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_3_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_3_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_3_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_3_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_3_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_3_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -775,27 +775,27 @@ volume_write_intra_socket_extract_metrics_4_threads:
 	dump_file="volume_write_intra_socket_4_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_4_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_4_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_4_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_4_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_4_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_4_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_4_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_4_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_4_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_4_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_4_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_4_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -827,27 +827,27 @@ volume_write_intra_socket_extract_metrics_5_threads:
 	dump_file="volume_write_intra_socket_5_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_5_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_5_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_5_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_5_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_5_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_5_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_5_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_5_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_5_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_5_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_5_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_5_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -879,27 +879,27 @@ volume_write_intra_socket_extract_metrics_6_threads:
 	dump_file="volume_write_intra_socket_6_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_6_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_6_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_6_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_6_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_6_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_6_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_6_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_6_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_6_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_6_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_6_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_6_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -931,27 +931,27 @@ volume_write_intra_socket_extract_metrics_7_threads:
 	dump_file="volume_write_intra_socket_7_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_7_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_7_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_7_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_7_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_7_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_7_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_7_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_7_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_7_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_7_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_7_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_7_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -983,27 +983,27 @@ volume_write_intra_socket_extract_metrics_8_threads:
 	dump_file="volume_write_intra_socket_8_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_8_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_8_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_8_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_8_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_8_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_8_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_8_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_8_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_8_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_8_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_8_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_8_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1035,27 +1035,27 @@ volume_write_intra_socket_extract_metrics_16_threads:
 	dump_file="volume_write_intra_socket_16_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_intra_socket_16_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1080,11 +1080,11 @@ volume_write_inter_socket_extract_metrics_2_threads:
 	dump_file="volume_write_inter_socket_2_threads_metrics.txt" ; \
 	echo "inter thread all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_2_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_2_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread invalidation" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_2_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_2_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1110,27 +1110,27 @@ volume_write_inter_socket_extract_metrics_3_threads:
 	dump_file="volume_write_inter_socket_3_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_3_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_3_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_3_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_3_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_3_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_3_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_3_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_3_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_3_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_3_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_3_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_3_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1155,27 +1155,27 @@ volume_write_inter_socket_extract_metrics_4_threads:
 	dump_file="volume_write_inter_socket_4_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_4_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_4_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_4_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_4_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_4_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_4_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_4_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_4_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_4_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_4_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_4_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_4_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1200,27 +1200,27 @@ volume_write_inter_socket_extract_metrics_5_threads:
 	dump_file="volume_write_inter_socket_5_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_5_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_5_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_5_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_5_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_5_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_5_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_5_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_5_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_5_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_5_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_5_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_5_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1245,27 +1245,27 @@ volume_write_inter_socket_extract_metrics_6_threads:
 	dump_file="volume_write_inter_socket_6_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_6_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_6_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_6_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_6_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_6_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_6_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_6_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_6_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_6_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_6_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_6_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_6_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1290,27 +1290,27 @@ volume_write_inter_socket_extract_metrics_7_threads:
 	dump_file="volume_write_inter_socket_7_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_7_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_7_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_7_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_7_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_7_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_7_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_7_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_7_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_7_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_7_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_7_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_7_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1335,27 +1335,27 @@ volume_write_inter_socket_extract_metrics_8_threads:
 	dump_file="volume_write_inter_socket_8_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_8_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_8_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_8_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_8_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_8_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_8_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_8_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_8_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_8_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_8_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_8_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_8_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1380,27 +1380,27 @@ volume_write_inter_socket_extract_metrics_16_threads:
 	dump_file="volume_write_inter_socket_16_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_16_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_16_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_16_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_16_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_16_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_16_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_16_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_16_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_16_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_16_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_write_inter_socket_16_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_write_inter_socket_16_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1517,7 +1517,7 @@ all_rfo_add_intra_socket_extract_metrics_2_threads:
 		string1="all_rfo_add_intra_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1552,7 +1552,7 @@ all_rfo_add_intra_socket_extract_metrics_4_threads:
 		string1="all_rfo_add_intra_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1587,7 +1587,7 @@ all_rfo_add_intra_socket_extract_metrics_8_threads:
 		string1="all_rfo_add_intra_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1632,7 +1632,7 @@ all_rfo_add_inter_socket_extract_metrics_2_threads:
 		string1="all_rfo_add_inter_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1667,7 +1667,7 @@ all_rfo_add_inter_socket_extract_metrics_4_threads:
 		string1="all_rfo_add_inter_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1702,7 +1702,7 @@ all_rfo_add_inter_socket_extract_metrics_8_threads:
 		string1="all_rfo_add_inter_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1737,7 +1737,7 @@ all_rfo_add_inter_socket_extract_metrics_16_threads:
 		string1="all_rfo_add_inter_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1762,27 +1762,27 @@ volume_add_intra_socket_extract_metrics_2_threads:
 	dump_file="volume_add_intra_socket_2_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_intra_socket_2_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_intra_socket_2_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_intra_socket_2_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_intra_socket_2_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_intra_socket_2_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_intra_socket_2_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_intra_socket_2_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_intra_socket_2_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_intra_socket_2_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_intra_socket_2_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_intra_socket_2_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_intra_socket_2_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1807,27 +1807,27 @@ volume_add_intra_socket_extract_metrics_4_threads:
 	dump_file="volume_add_intra_socket_4_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_intra_socket_4_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_intra_socket_4_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_intra_socket_4_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_intra_socket_4_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_intra_socket_4_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_intra_socket_4_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_intra_socket_4_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_intra_socket_4_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_intra_socket_4_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_intra_socket_4_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_intra_socket_4_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_intra_socket_4_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1852,27 +1852,27 @@ volume_add_intra_socket_extract_metrics_8_threads:
 	dump_file="volume_add_intra_socket_8_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_intra_socket_8_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_intra_socket_8_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_intra_socket_8_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_intra_socket_8_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_intra_socket_8_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_intra_socket_8_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_intra_socket_8_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_intra_socket_8_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_intra_socket_8_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_intra_socket_8_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_intra_socket_8_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_intra_socket_8_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1924,27 +1924,27 @@ volume_add_inter_socket_extract_metrics_2_threads:
 	dump_file="volume_add_inter_socket_2_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_2_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_2_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_2_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_2_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_2_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_2_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_2_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_2_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_2_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_2_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_2_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_2_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -1969,27 +1969,27 @@ volume_add_inter_socket_extract_metrics_4_threads:
 	dump_file="volume_add_inter_socket_4_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_4_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_4_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_4_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_4_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_4_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_4_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_4_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_4_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_4_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_4_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_4_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_4_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2014,27 +2014,27 @@ volume_add_inter_socket_extract_metrics_8_threads:
 	dump_file="volume_add_inter_socket_8_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_8_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_8_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_8_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_8_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_8_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_8_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_8_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_8_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_8_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_8_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_8_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_8_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2059,27 +2059,27 @@ volume_add_inter_socket_extract_metrics_16_threads:
 	dump_file="volume_add_inter_socket_16_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_16_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_16_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_16_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_16_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_16_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_16_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_16_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_16_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_16_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_16_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_add_inter_socket_16_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_add_inter_socket_16_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2160,7 +2160,7 @@ all_rfo_exchg_intra_socket_extract_metrics_2_threads:
 		string1="all_rfo_exchg_intra_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2195,7 +2195,7 @@ all_rfo_exchg_intra_socket_extract_metrics_4_threads:
 		string1="all_rfo_exchg_intra_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2230,7 +2230,7 @@ all_rfo_exchg_intra_socket_extract_metrics_8_threads:
 		string1="all_rfo_exchg_intra_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2275,7 +2275,7 @@ all_rfo_exchg_inter_socket_extract_metrics_2_threads:
 		string1="all_rfo_exchg_inter_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2310,7 +2310,7 @@ all_rfo_exchg_inter_socket_extract_metrics_4_threads:
 		string1="all_rfo_exchg_inter_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2345,7 +2345,7 @@ all_rfo_exchg_inter_socket_extract_metrics_8_threads:
 		string1="all_rfo_exchg_inter_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2380,7 +2380,7 @@ all_rfo_exchg_inter_socket_extract_metrics_16_threads:
 		string1="all_rfo_exchg_inter_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
 		input_file="$$string1$$i$$string2" ; \
-		./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics $$input_file 6 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2406,27 +2406,27 @@ volume_exchg_intra_socket_extract_metrics_2_threads:
 	dump_file="volume_exchg_intra_socket_2_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2451,27 +2451,27 @@ volume_exchg_intra_socket_extract_metrics_4_threads:
 	dump_file="volume_exchg_intra_socket_4_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2496,27 +2496,27 @@ volume_exchg_intra_socket_extract_metrics_8_threads:
 	dump_file="volume_exchg_intra_socket_8_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2568,27 +2568,27 @@ volume_exchg_inter_socket_extract_metrics_2_threads:
 	dump_file="volume_exchg_inter_socket_2_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2613,27 +2613,27 @@ volume_exchg_inter_socket_extract_metrics_4_threads:
 	dump_file="volume_exchg_inter_socket_4_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2658,27 +2658,27 @@ volume_exchg_inter_socket_extract_metrics_8_threads:
 	dump_file="volume_exchg_inter_socket_8_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2703,27 +2703,27 @@ volume_exchg_inter_socket_extract_metrics_16_threads:
 	dump_file="volume_exchg_inter_socket_16_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count volume_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics volume_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2794,27 +2794,27 @@ false_sharing_write_intra_socket_extract_metrics_2_threads:
 	dump_file="false_sharing_write_intra_socket_2_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_intra_socket_2_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_intra_socket_2_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_intra_socket_2_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_intra_socket_2_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_intra_socket_2_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_intra_socket_2_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_intra_socket_2_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_intra_socket_2_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_intra_socket_2_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_intra_socket_2_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_intra_socket_2_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_intra_socket_2_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2848,27 +2848,27 @@ false_sharing_write_intra_socket_extract_metrics_4_threads:
 	dump_file="false_sharing_write_intra_socket_4_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_intra_socket_4_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_intra_socket_4_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_intra_socket_4_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_intra_socket_4_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_intra_socket_4_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_intra_socket_4_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_intra_socket_4_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_intra_socket_4_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_intra_socket_4_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_intra_socket_4_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_intra_socket_4_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_intra_socket_4_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2902,27 +2902,27 @@ false_sharing_write_intra_socket_extract_metrics_8_threads:
 	dump_file="false_sharing_write_intra_socket_8_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_intra_socket_8_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_intra_socket_8_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_intra_socket_8_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_intra_socket_8_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_intra_socket_8_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_intra_socket_8_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_intra_socket_8_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_intra_socket_8_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_intra_socket_8_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_intra_socket_8_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_intra_socket_8_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_intra_socket_8_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -2958,27 +2958,27 @@ false_sharing_write_inter_socket_extract_metrics_2_threads:
 	dump_file="false_sharing_write_inter_socket_2_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_2_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_2_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_2_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_2_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_2_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_2_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_2_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_2_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_2_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_2_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_2_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_2_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -3012,27 +3012,27 @@ false_sharing_write_inter_socket_extract_metrics_4_threads:
 	dump_file="false_sharing_write_inter_socket_4_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_4_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_4_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_4_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_4_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_4_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_4_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_4_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_4_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_4_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_4_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_4_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_4_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -3066,27 +3066,27 @@ false_sharing_write_inter_socket_extract_metrics_8_threads:
 	dump_file="false_sharing_write_inter_socket_8_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_8_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_8_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_8_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_8_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_8_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_8_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_8_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_8_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_8_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_8_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_8_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_8_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -3120,27 +3120,27 @@ false_sharing_write_inter_socket_extract_metrics_16_threads:
 	dump_file="false_sharing_write_inter_socket_16_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_16_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_16_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_16_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_16_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_16_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_16_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_16_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_16_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_16_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_16_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_write_inter_socket_16_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_write_inter_socket_16_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -3176,27 +3176,27 @@ false_sharing_add_intra_socket_extract_metrics_2_threads:
 	dump_file="false_sharing_add_intra_socket_2_threads_metrics.txt" ; \
 	echo "intra core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_intra_socket_2_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_intra_socket_2_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "intra thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_intra_socket_2_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_intra_socket_2_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "intra core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_intra_socket_2_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_intra_socket_2_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "intra thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_intra_socket_2_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_intra_socket_2_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "intra core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_intra_socket_2_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_intra_socket_2_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "intra thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_intra_socket_2_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_intra_socket_2_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -3230,27 +3230,27 @@ false_sharing_add_intra_socket_extract_metrics_4_threads:
 	dump_file="false_sharing_add_intra_socket_4_threads_metrics.txt" ; \
 	echo "intra core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_intra_socket_4_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_intra_socket_4_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "intra thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_intra_socket_4_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_intra_socket_4_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "intra core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_intra_socket_4_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_intra_socket_4_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "intra thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_intra_socket_4_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_intra_socket_4_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "intra core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_intra_socket_4_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_intra_socket_4_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "intra thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_intra_socket_4_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_intra_socket_4_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -3284,27 +3284,27 @@ false_sharing_add_intra_socket_extract_metrics_8_threads:
 	dump_file="false_sharing_add_intra_socket_8_threads_metrics.txt" ; \
 	echo "intra core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_intra_socket_8_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_intra_socket_8_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "intra thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_intra_socket_8_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_intra_socket_8_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "intra core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_intra_socket_8_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_intra_socket_8_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "intra thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_intra_socket_8_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_intra_socket_8_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "intra core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_intra_socket_8_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_intra_socket_8_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "intra thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_intra_socket_8_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_intra_socket_8_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -3340,27 +3340,27 @@ false_sharing_add_inter_socket_extract_metrics_2_threads:
 	dump_file="false_sharing_add_inter_socket_2_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_2_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_2_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_2_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_2_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_2_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_2_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_2_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_2_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_2_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_2_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_2_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_2_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -3394,27 +3394,27 @@ false_sharing_add_inter_socket_extract_metrics_4_threads:
 	dump_file="false_sharing_add_inter_socket_4_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_4_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_4_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_4_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_4_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_4_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_4_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_4_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_4_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_4_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_4_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_4_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_4_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -3448,27 +3448,27 @@ false_sharing_add_inter_socket_extract_metrics_8_threads:
 	dump_file="false_sharing_add_inter_socket_8_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_8_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_8_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_8_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_8_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_8_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_8_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_8_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_8_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_8_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_8_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_8_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_8_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -3502,27 +3502,27 @@ false_sharing_add_inter_socket_extract_metrics_16_threads:
 	dump_file="false_sharing_add_inter_socket_16_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_16_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_16_threads_$$i/ubench_add-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_16_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_16_threads_$$i/ubench_add-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_16_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_16_threads_$$i/ubench_add-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_16_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_16_threads_$$i/ubench_add-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_16_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_16_threads_$$i/ubench_add-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_add_inter_socket_16_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_add_inter_socket_16_threads_$$i/ubench_add-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -3558,27 +3558,27 @@ false_sharing_exchg_intra_socket_extract_metrics_2_threads:
 	dump_file="false_sharing_exchg_intra_socket_2_threads_metrics.txt" ; \
 	echo "intra core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "intra thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "intra core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "intra thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "intra core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "intra thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_intra_socket_2_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -3612,27 +3612,27 @@ false_sharing_exchg_intra_socket_extract_metrics_4_threads:
 	dump_file="false_sharing_exchg_intra_socket_4_threads_metrics.txt" ; \
 	echo "intra core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "intra thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "intra core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "intra thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "intra core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "intra thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_intra_socket_4_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -3666,27 +3666,27 @@ false_sharing_exchg_intra_socket_extract_metrics_8_threads:
 	dump_file="false_sharing_exchg_intra_socket_8_threads_metrics.txt" ; \
 	echo "intra core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "intra thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "intra core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "intra thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "intra core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "intra thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_intra_socket_8_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -3722,27 +3722,27 @@ false_sharing_exchg_inter_socket_extract_metrics_2_threads:
 	dump_file="false_sharing_exchg_inter_socket_2_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_2_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -3776,27 +3776,27 @@ false_sharing_exchg_inter_socket_extract_metrics_4_threads:
 	dump_file="false_sharing_exchg_inter_socket_4_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_4_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -3830,27 +3830,27 @@ false_sharing_exchg_inter_socket_extract_metrics_8_threads:
 	dump_file="false_sharing_exchg_inter_socket_8_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_8_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -3884,27 +3884,27 @@ false_sharing_exchg_inter_socket_extract_metrics_16_threads:
 	dump_file="false_sharing_exchg_inter_socket_16_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count false_sharing_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics false_sharing_exchg_inter_socket_16_threads_$$i/ubench_exchg-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -3950,77 +3950,77 @@ p2p_run:
 p2p_extract_metrics:
 	dump_file="p2p_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_0_1/ubench-*.log 0 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_01_09/ubench-*.log 0 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_02_08/ubench-*.log 0 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_03_07/ubench-*.log 0 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_04_06/ubench-*.log 0 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_05_05/ubench-*.log 0 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_06_04/ubench-*.log 0 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_07_03/ubench-*.log 0 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_08_02/ubench-*.log 0 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_09_01/ubench-*.log 0 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_1_0/ubench-*.log 0 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_0_1/ubench-*.log 0 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_01_09/ubench-*.log 0 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_02_08/ubench-*.log 0 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_03_07/ubench-*.log 0 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_04_06/ubench-*.log 0 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_05_05/ubench-*.log 0 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_06_04/ubench-*.log 0 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_07_03/ubench-*.log 0 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_08_02/ubench-*.log 0 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_09_01/ubench-*.log 0 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_1_0/ubench-*.log 0 >> $$dump_file ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_0_1/ubench-*.log 1 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_01_09/ubench-*.log 1 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_02_08/ubench-*.log 1 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_03_07/ubench-*.log 1 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_04_06/ubench-*.log 1 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_05_05/ubench-*.log 1 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_06_04/ubench-*.log 1 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_07_03/ubench-*.log 1 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_08_02/ubench-*.log 1 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_09_01/ubench-*.log 1 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_1_0/ubench-*.log 1 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_0_1/ubench-*.log 1 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_01_09/ubench-*.log 1 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_02_08/ubench-*.log 1 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_03_07/ubench-*.log 1 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_04_06/ubench-*.log 1 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_05_05/ubench-*.log 1 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_06_04/ubench-*.log 1 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_07_03/ubench-*.log 1 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_08_02/ubench-*.log 1 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_09_01/ubench-*.log 1 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_1_0/ubench-*.log 1 >> $$dump_file ; \
 	echo "inter core true sharing" >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_0_1/ubench-*.log 2 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_01_09/ubench-*.log 2 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_02_08/ubench-*.log 2 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_03_07/ubench-*.log 2 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_04_06/ubench-*.log 2 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_05_05/ubench-*.log 2 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_06_04/ubench-*.log 2 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_07_03/ubench-*.log 2 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_08_02/ubench-*.log 2 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_09_01/ubench-*.log 2 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_1_0/ubench-*.log 2 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_0_1/ubench-*.log 2 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_01_09/ubench-*.log 2 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_02_08/ubench-*.log 2 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_03_07/ubench-*.log 2 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_04_06/ubench-*.log 2 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_05_05/ubench-*.log 2 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_06_04/ubench-*.log 2 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_07_03/ubench-*.log 2 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_08_02/ubench-*.log 2 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_09_01/ubench-*.log 2 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_1_0/ubench-*.log 2 >> $$dump_file ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_0_1/ubench-*.log 3 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_01_09/ubench-*.log 3 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_02_08/ubench-*.log 3 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_03_07/ubench-*.log 3 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_04_06/ubench-*.log 3 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_05_05/ubench-*.log 3 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_06_04/ubench-*.log 3 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_07_03/ubench-*.log 3 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_08_02/ubench-*.log 3 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_09_01/ubench-*.log 3 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_1_0/ubench-*.log 3 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_0_1/ubench-*.log 3 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_01_09/ubench-*.log 3 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_02_08/ubench-*.log 3 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_03_07/ubench-*.log 3 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_04_06/ubench-*.log 3 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_05_05/ubench-*.log 3 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_06_04/ubench-*.log 3 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_07_03/ubench-*.log 3 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_08_02/ubench-*.log 3 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_09_01/ubench-*.log 3 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_1_0/ubench-*.log 3 >> $$dump_file ; \
 	echo "inter core false sharing" >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_0_1/ubench-*.log 4 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_01_09/ubench-*.log 4 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_02_08/ubench-*.log 4 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_03_07/ubench-*.log 4 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_04_06/ubench-*.log 4 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_05_05/ubench-*.log 4 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_06_04/ubench-*.log 4 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_07_03/ubench-*.log 4 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_08_02/ubench-*.log 4 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_09_01/ubench-*.log 4 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_1_0/ubench-*.log 4 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_0_1/ubench-*.log 4 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_01_09/ubench-*.log 4 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_02_08/ubench-*.log 4 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_03_07/ubench-*.log 4 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_04_06/ubench-*.log 4 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_05_05/ubench-*.log 4 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_06_04/ubench-*.log 4 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_07_03/ubench-*.log 4 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_08_02/ubench-*.log 4 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_09_01/ubench-*.log 4 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_1_0/ubench-*.log 4 >> $$dump_file ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_0_1/ubench-*.log 5 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_01_09/ubench-*.log 5 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_02_08/ubench-*.log 5 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_03_07/ubench-*.log 5 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_04_06/ubench-*.log 5 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_05_05/ubench-*.log 5 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_06_04/ubench-*.log 5 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_07_03/ubench-*.log 5 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_08_02/ubench-*.log 5 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_09_01/ubench-*.log 5 >> $$dump_file ; \
-	./metric_extractor/extract_communication_count p2p_run_1_0/ubench-*.log 5 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_0_1/ubench-*.log 5 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_01_09/ubench-*.log 5 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_02_08/ubench-*.log 5 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_03_07/ubench-*.log 5 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_04_06/ubench-*.log 5 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_05_05/ubench-*.log 5 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_06_04/ubench-*.log 5 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_07_03/ubench-*.log 5 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_08_02/ubench-*.log 5 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_09_01/ubench-*.log 5 >> $$dump_file ; \
+	./metric_extractor/extract_mrdx_metrics p2p_run_1_0/ubench-*.log 5 >> $$dump_file ; \
 	echo "elapsed time" >> $$dump_file ; \
 	./metric_extractor/extract_overhead p2p_0_1_stdout.txt 0 >> $$dump_file ; \
 	./metric_extractor/extract_overhead p2p_01_09_stdout.txt 0 >> $$dump_file ; \
@@ -4054,27 +4054,27 @@ read_write_2_threads_extract_metrics:
 	dump_file="read_write_2_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count read_write_2_threads_$$i/ubench-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics read_write_2_threads_$$i/ubench-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count read_write_2_threads_$$i/ubench-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics read_write_2_threads_$$i/ubench-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count read_write_2_threads_$$i/ubench-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics read_write_2_threads_$$i/ubench-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count read_write_2_threads_$$i/ubench-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics read_write_2_threads_$$i/ubench-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count read_write_2_threads_$$i/ubench-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics read_write_2_threads_$$i/ubench-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count read_write_2_threads_$$i/ubench-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics read_write_2_threads_$$i/ubench-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -4106,27 +4106,27 @@ read_write_4_threads_extract_metrics:
 	dump_file="read_write_4_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count read_write_4_threads_$$i/ubench-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics read_write_4_threads_$$i/ubench-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count read_write_4_threads_$$i/ubench-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics read_write_4_threads_$$i/ubench-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count read_write_4_threads_$$i/ubench-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics read_write_4_threads_$$i/ubench-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count read_write_4_threads_$$i/ubench-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics read_write_4_threads_$$i/ubench-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count read_write_4_threads_$$i/ubench-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics read_write_4_threads_$$i/ubench-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count read_write_4_threads_$$i/ubench-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics read_write_4_threads_$$i/ubench-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
@@ -4158,27 +4158,27 @@ read_write_8_threads_extract_metrics:
 	dump_file="read_write_8_threads_metrics.txt" ; \
 	echo "inter core all sharing" > $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count read_write_8_threads_$$i/ubench-*.log 0 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics read_write_8_threads_$$i/ubench-*.log 0 >> $$dump_file ; \
 	done ; \
 	echo "inter thread all sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count read_write_8_threads_$$i/ubench-*.log 1 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics read_write_8_threads_$$i/ubench-*.log 1 >> $$dump_file ; \
 	done ; \
 	echo "inter core true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count read_write_8_threads_$$i/ubench-*.log 2 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics read_write_8_threads_$$i/ubench-*.log 2 >> $$dump_file ; \
 	done ; \
 	echo "inter thread true sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count read_write_8_threads_$$i/ubench-*.log 3 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics read_write_8_threads_$$i/ubench-*.log 3 >> $$dump_file ; \
 	done ; \
 	echo "inter core false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count read_write_8_threads_$$i/ubench-*.log 4 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics read_write_8_threads_$$i/ubench-*.log 4 >> $$dump_file ; \
 	done ; \
 	echo "inter thread false sharing" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
-		./metric_extractor/extract_communication_count read_write_8_threads_$$i/ubench-*.log 5 >> $$dump_file ; \
+		./metric_extractor/extract_mrdx_metrics read_write_8_threads_$$i/ubench-*.log 5 >> $$dump_file ; \
 	done ; \
 	echo "elapsed time" >> $$dump_file ; \
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
