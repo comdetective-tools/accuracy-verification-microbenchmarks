@@ -16,11 +16,10 @@
 #define INTER_THREAD_FALSE_SHARING 5
 #define ALL_RFO 6
 
-long extract_all_rfo_count(char *line) {
+void extract_all_rfo_count(char *line, char all_rfo_count[100]) {
 	char all_rfo_str[10];
-	long all_rfo_count;
-	sscanf(line, "%*[^0123456789]%ld \t%s \t\n", &all_rfo_count, all_rfo_str);
-	return all_rfo_count;
+	//char all_rfo_count[100];
+	sscanf(line, "%s \t%s \t\n", all_rfo_count, all_rfo_str);
 }
 
 double extract_communication_count(char *line, int communication_type)
@@ -99,8 +98,9 @@ main(int argc, char *argv[]) {
 	if(communication_type == ALL_RFO) {
 		while ( line = read_line(fin) ) {
             		if ( strstr(line, all_rfo_str) ){
-				long d = extract_all_rfo_count(line);
-				printf("%ld\n", d);
+				char num[100];
+				extract_all_rfo_count(line, num);
+				printf("%s\n", num);
             		}
             		free(line);
         	}
