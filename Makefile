@@ -1,5 +1,5 @@
-ComDetective_bin=/home/msasongko17/research/ReuseTracker/reusetracker-bin
-perf_bin=/home/msasongko17/Documents/linux-5.10.20/tools/perf
+ComDetective_bin=/home/msasongko17/research/testing-reusetracker-repo/ReuseTracker/reusetracker-bin
+perf_bin=/home/msasongko17/Documents/linux/tools/perf
 
 sc_results: all_rfo_write volume_write_verification false_sharing_add_intra_socket_8_threads read_write p2p
 
@@ -349,6 +349,8 @@ all_rfo_write_inter_socket_16_threads: metric_extractor_install volume_install a
 
 all_rfo_write_inter_socket_32_threads: metric_extractor_install volume_install all_rfo_write_inter_socket_run_32_threads all_rfo_write_inter_socket_extract_metrics_32_threads
 
+all_rfo_write_inter_socket_48_threads: metric_extractor_install volume_install all_rfo_write_inter_socket_run_48_threads all_rfo_write_inter_socket_extract_metrics_48_threads
+
 all_rfo_write_inter_socket_run_2_threads:
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 ; do \
 		string1="all_rfo_write_inter_socket_2_threads_" ; \
@@ -664,6 +666,45 @@ all_rfo_write_inter_socket_extract_metrics_32_threads:
                 echo $$input_file ; \
                 ./metric_extractor/extract_overhead $$input_file 1 >> $$dump_file ; \
         done ;
+
+all_rfo_write_inter_socket_run_48_threads:
+	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 ; do \
+                string1="all_rfo_write_inter_socket_48_threads_" ; \
+                string2="_stdout.txt" ; \
+                dump_file="$$string1$$i$$string2" ; \
+                echo "----------------" ; \
+                GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r430864 ./write-volume/ubench_write -n 48 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+        done
+
+all_rfo_write_inter_socket_extract_metrics_48_threads:
+	dump_file="all_rfo_write_inter_socket_48_threads_metrics.txt" ; \
+        echo "all RFO counts" > $$dump_file ; \
+        for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+                string1="all_rfo_write_inter_socket_48_threads_" ; \
+                string2="_stdout.txt" ; \
+                input_file="$$string1$$i$$string2" ; \
+                ./metric_extractor/extract_communication_count $$input_file 6 >> $$dump_file ; \
+        done ; \
+        echo "elapsed time" >> $$dump_file ; \
+        for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+                string1="all_rfo_write_inter_socket_48_threads_" ; \
+                string2="_stdout.txt" ; \
+                input_file="$$string1$$i$$string2" ; \
+                echo $$input_file ; \
+                ./metric_extractor/extract_overhead $$input_file 0 >> $$dump_file ; \
+        done ; \
+        echo "memory overhead" >> $$dump_file ; \
+        for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+                string1="all_rfo_write_inter_socket_48_threads_" ; \
+                string2="_stdout.txt" ; \
+                input_file="$$string1$$i$$string2" ; \
+                echo $$input_file ; \
+                ./metric_extractor/extract_overhead $$input_file 1 >> $$dump_file ; \
+        done ;
+
+volume_write_high_thread_check: volume_write_intra_socket_16_threads  volume_write_inter_socket_32_threads
+
+volume_write_48_thread_check: all_rfo_write_inter_socket_48_threads volume_write_inter_socket_48_threads
 
 volume_verification: volume_write_verification volume_add_verification  volume_exchg_verification 
 
@@ -1528,6 +1569,52 @@ volume_write_inter_socket_extract_metrics_32_threads:
                 ./metric_extractor/extract_overhead $$input_file 1 >> $$dump_file ; \
         done ;
 
+volume_write_inter_socket_48_threads: metric_extractor_install volume_install volume_write_inter_socket_run_48_threads volume_write_inter_socket_extract_metrics_48_threads
+
+volume_write_inter_socket_extract_metrics_48_threads:
+	dump_file="volume_write_inter_socket_48_threads_metrics.txt" ; \
+        echo "inter core all sharing" > $$dump_file ; \
+        for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+                ./metric_extractor/extract_communication_count volume_write_inter_socket_48_threads_$$i/ubench_write-*.log 0 >> $$dump_file ; \
+        done ; \
+        echo "inter thread all sharing" >> $$dump_file ; \
+        for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+                ./metric_extractor/extract_communication_count volume_write_inter_socket_48_threads_$$i/ubench_write-*.log 1 >> $$dump_file ; \
+        done ; \
+        echo "inter core true sharing" >> $$dump_file ; \
+        for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+                ./metric_extractor/extract_communication_count volume_write_inter_socket_48_threads_$$i/ubench_write-*.log 2 >> $$dump_file ; \
+        done ; \
+        echo "inter thread true sharing" >> $$dump_file ; \
+        for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+                ./metric_extractor/extract_communication_count volume_write_inter_socket_48_threads_$$i/ubench_write-*.log 3 >> $$dump_file ; \
+        done ; \
+        echo "inter core false sharing" >> $$dump_file ; \
+        for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+                ./metric_extractor/extract_communication_count volume_write_inter_socket_48_threads_$$i/ubench_write-*.log 4 >> $$dump_file ; \
+        done ; \
+        echo "inter thread false sharing" >> $$dump_file ; \
+        for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+                ./metric_extractor/extract_communication_count volume_write_inter_socket_48_threads_$$i/ubench_write-*.log 5 >> $$dump_file ; \
+        done ; \
+        echo "elapsed time" >> $$dump_file ; \
+	echo "elapsed time" >> $$dump_file ; \
+        for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+                string1="volume_write_inter_socket_48_threads_" ; \
+                string2="_stdout.txt" ; \
+                input_file="$$string1$$i$$string2" ; \
+                echo $$input_file ; \
+                ./metric_extractor/extract_overhead $$input_file 0 >> $$dump_file ; \
+        done ; \
+        echo "memory overhead" >> $$dump_file ; \
+        for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+                string1="volume_write_inter_socket_48_threads_" ; \
+                string2="_stdout.txt" ; \
+                input_file="$$string1$$i$$string2" ; \
+                echo $$input_file ; \
+                ./metric_extractor/extract_overhead $$input_file 1 >> $$dump_file ; \
+        done ;	
+
 volume_write_inter_socket_run_2_threads: write-volume/ubench_write
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
 		string1="volume_write_inter_socket_2_threads_" ; \
@@ -1607,6 +1694,15 @@ volume_write_inter_socket_run_32_threads: write-volume/ubench_write
                 dump_file="$$string1$$i$$string2" ; \
                 echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_32_threads_$$i  ./write-volume/ubench_write -n 32 -s $$i -f 0.0 -i 100000000"  ;  \
                 GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_32_threads_$$i ./write-volume/ubench_write -n 32 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+        done
+
+volume_write_inter_socket_run_48_threads: write-volume/ubench_write
+	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+                string1="volume_write_inter_socket_48_threads_" ; \
+                string2="_stdout.txt" ; \
+                dump_file="$$string1$$i$$string2" ; \
+                echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_48_threads_$$i  ./write-volume/ubench_write -n 48 -s $$i -f 0.0 -i 100000000"  ;  \
+                GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_48_threads_$$i ./write-volume/ubench_write -n 48 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
         done
 
 all_rfo_add: all_rfo_add_intra_socket all_rfo_add_inter_socket

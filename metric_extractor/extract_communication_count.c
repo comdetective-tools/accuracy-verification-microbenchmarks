@@ -80,12 +80,22 @@ read_line(FILE *fin) {
     return NULL;
 }
 
+void removeChar(char str[100], char garbage) {
+
+    char *src, *dst;
+    for (src = dst = str; *src != '\0'; src++) {
+        *dst = *src;
+        if (*dst != garbage) dst++;
+    }
+    *dst = '\0';
+}
+
 int
 main(int argc, char *argv[]) {
     FILE *fin;
     char *line;
     char comdetective_stats[20] = "COMDETECTIVE STATS:";
-    char all_rfo_str[10] = "re224";
+    char all_rfo_str[10] = "r430864";
     if ( argc != 3 ) {
         return EXIT_FAILURE;
     }
@@ -100,6 +110,7 @@ main(int argc, char *argv[]) {
             		if ( strstr(line, all_rfo_str) ){
 				char num[100];
 				extract_all_rfo_count(line, num);
+				removeChar(num, '.');
 				printf("%s\n", num);
             		}
             		free(line);
