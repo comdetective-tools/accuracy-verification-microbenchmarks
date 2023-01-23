@@ -1,7 +1,9 @@
-ComDetective_bin=/home/msasongko17/research/testing-reusetracker-repo/ReuseTracker/reusetracker-bin
-perf_bin=/home/msasongko17/Documents/linux/tools/perf
+ComDetective_bin=/home/msasongko17/ReuseTracker/reusetracker-bin
+perf_bin=/home/msasongko17/linux/tools/perf
 
 sc_results: all_rfo_write volume_write_verification false_sharing_add_intra_socket_8_threads read_write p2p
+
+sc_results_vol_verification: all_rfo_write volume_write_verification
 
 sc_results_min_rfo: volume_write_verification false_sharing_add_intra_socket_8_threads read_write p2p
 
@@ -357,7 +359,7 @@ all_rfo_write_inter_socket_run_2_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 24" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r430864 ./write-volume/ubench_write -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 16" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r430864 ./write-volume/ubench_write -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_inter_socket_extract_metrics_2_threads:
@@ -427,7 +429,7 @@ all_rfo_write_inter_socket_run_4_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 24 25" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r430864 ./write-volume/ubench_write -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r430864 ./write-volume/ubench_write -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_inter_socket_extract_metrics_4_threads:
@@ -567,7 +569,7 @@ all_rfo_write_inter_socket_run_8_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3 24 25 26 27" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r430864 ./write-volume/ubench_write -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3 16 17 18 19" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r430864 ./write-volume/ubench_write -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_inter_socket_extract_metrics_8_threads:
@@ -602,7 +604,7 @@ all_rfo_write_inter_socket_run_16_threads:
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
 		echo "----------------" ; \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 24 25 26 27 28 29 30 31" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r430864 ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 16 17 18 19 20 21 22 23" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r430864 ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
 	done
 
 all_rfo_write_inter_socket_extract_metrics_16_threads:
@@ -634,11 +636,11 @@ all_rfo_write_inter_socket_extract_metrics_16_threads:
 
 all_rfo_write_inter_socket_run_32_threads:
 	for i in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 ; do \
-                string1="all_rfo_write_inter_socket_16_threads_" ; \
+                string1="all_rfo_write_inter_socket_32_threads_" ; \
                 string2="_stdout.txt" ; \
                 dump_file="$$string1$$i$$string2" ; \
                 echo "----------------" ; \
-                GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r430864 ./write-volume/ubench_write -n 32 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
+                GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${perf_bin}/perf stat -e r430864 ./write-volume/ubench_write -n 32 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ; \
         done
 
 all_rfo_write_inter_socket_extract_metrics_32_threads:
@@ -1620,8 +1622,8 @@ volume_write_inter_socket_run_2_threads: write-volume/ubench_write
 		string1="volume_write_inter_socket_2_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 24\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_2_threads_$$i  ./write-volume/ubench_write -n 2 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 24" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_2_threads_$$i ./write-volume/ubench_write -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 16\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_2_threads_$$i  ./write-volume/ubench_write -n 2 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 16" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_2_threads_$$i ./write-volume/ubench_write -n 2 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_inter_socket_run_3_threads: write-volume/ubench_write
@@ -1629,8 +1631,8 @@ volume_write_inter_socket_run_3_threads: write-volume/ubench_write
 		string1="volume_write_inter_socket_3_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 24\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_3_threads_$$i  ./write-volume/ubench_write -n 3 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 24" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_3_threads_$$i ./write-volume/ubench_write -n 3 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 16\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_3_threads_$$i  ./write-volume/ubench_write -n 3 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 16" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_3_threads_$$i ./write-volume/ubench_write -n 3 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_inter_socket_run_4_threads: write-volume/ubench_write
@@ -1638,8 +1640,8 @@ volume_write_inter_socket_run_4_threads: write-volume/ubench_write
 		string1="volume_write_inter_socket_4_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 24 25\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_4_threads_$$i  ./write-volume/ubench_write -n 4 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 24 25" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_4_threads_$$i ./write-volume/ubench_write -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 16 17\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_4_threads_$$i  ./write-volume/ubench_write -n 4 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_4_threads_$$i ./write-volume/ubench_write -n 4 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_inter_socket_run_5_threads: write-volume/ubench_write
@@ -1647,8 +1649,8 @@ volume_write_inter_socket_run_5_threads: write-volume/ubench_write
 		string1="volume_write_inter_socket_5_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 24 25\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_5_threads_$$i  ./write-volume/ubench_write -n 5 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 24 25" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_5_threads_$$i ./write-volume/ubench_write -n 5 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 16 17\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_5_threads_$$i  ./write-volume/ubench_write -n 5 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 16 17" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_5_threads_$$i ./write-volume/ubench_write -n 5 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_inter_socket_run_6_threads: write-volume/ubench_write
@@ -1656,8 +1658,8 @@ volume_write_inter_socket_run_6_threads: write-volume/ubench_write
 		string1="volume_write_inter_socket_6_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 24 25 26\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_6_threads_$$i  ./write-volume/ubench_write -n 6 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 24 25 26" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_6_threads_$$i ./write-volume/ubench_write -n 6 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 16 17 18\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_6_threads_$$i  ./write-volume/ubench_write -n 6 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 16 17 18" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_6_threads_$$i ./write-volume/ubench_write -n 6 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_inter_socket_run_7_threads: write-volume/ubench_write
@@ -1665,8 +1667,8 @@ volume_write_inter_socket_run_7_threads: write-volume/ubench_write
 		string1="volume_write_inter_socket_7_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 24 25 26\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_7_threads_$$i  ./write-volume/ubench_write -n 7 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 24 25 26" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_7_threads_$$i ./write-volume/ubench_write -n 7 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 16 17 18\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_7_threads_$$i  ./write-volume/ubench_write -n 7 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 16 17 18" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_7_threads_$$i ./write-volume/ubench_write -n 7 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_inter_socket_run_8_threads: write-volume/ubench_write
@@ -1674,8 +1676,8 @@ volume_write_inter_socket_run_8_threads: write-volume/ubench_write
 		string1="volume_write_inter_socket_8_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 24 25 26 27\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_8_threads_$$i  ./write-volume/ubench_write -n 8 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 24 25 26 27" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_8_threads_$$i ./write-volume/ubench_write -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 16 17 18 19\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_8_threads_$$i  ./write-volume/ubench_write -n 8 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 16 17 18 19" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_8_threads_$$i ./write-volume/ubench_write -n 8 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_inter_socket_run_16_threads: write-volume/ubench_write
@@ -1683,8 +1685,8 @@ volume_write_inter_socket_run_16_threads: write-volume/ubench_write
 		string1="volume_write_inter_socket_16_threads_" ; \
 		string2="_stdout.txt" ; \
 		dump_file="$$string1$$i$$string2" ; \
-		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 24 25 26 27 28 29 30 31\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_16_threads_$$i  ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000"  ;  \
-		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 24 25 26 27 28 29 30 31" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_16_threads_$$i ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+		echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 16 17 18 19 20 21 22 23\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_16_threads_$$i  ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000"  ;  \
+		GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 16 17 18 19 20 21 22 23" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_16_threads_$$i ./write-volume/ubench_write -n 16 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
 	done
 
 volume_write_inter_socket_run_32_threads: write-volume/ubench_write
@@ -1692,8 +1694,8 @@ volume_write_inter_socket_run_32_threads: write-volume/ubench_write
                 string1="volume_write_inter_socket_32_threads_" ; \
                 string2="_stdout.txt" ; \
                 dump_file="$$string1$$i$$string2" ; \
-                echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_32_threads_$$i  ./write-volume/ubench_write -n 32 -s $$i -f 0.0 -i 100000000"  ;  \
-                GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_32_threads_$$i ./write-volume/ubench_write -n 32 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
+                echo "GOMP_CPU_AFFINITY=\"0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31\" /usr/bin/time -f \"Elapsed Time , %e, system, %S, user, %U, memory, %M\" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_32_threads_$$i  ./write-volume/ubench_write -n 32 -s $$i -f 0.0 -i 100000000"  ;  \
+                GOMP_CPU_AFFINITY="0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31" /usr/bin/time -f "Elapsed Time , %e, system, %S, user, %U, memory, %M" ${ComDetective_bin}/bin/hpcrun -e WP_AMD_COMM -e IBS_OP@50000 -o volume_write_inter_socket_32_threads_$$i ./write-volume/ubench_write -n 32 -s $$i -f 0.0 -i 100000000 2>&1 | tee $$dump_file ;  \
         done
 
 volume_write_inter_socket_run_48_threads: write-volume/ubench_write
