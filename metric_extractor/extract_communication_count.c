@@ -16,11 +16,10 @@
 #define INTER_THREAD_FALSE_SHARING 5
 #define ALL_RFO 6
 
-long extract_all_rfo_count(char *line) {
+void extract_all_rfo_count(char *line, char all_rfo_count[100]) {
 	char all_rfo_str[10];
-	long all_rfo_count;
-	sscanf(line, "%*[^0123456789]%ld \t%s \t\n", &all_rfo_count, all_rfo_str);
-	return all_rfo_count;
+	//char all_rfo_count[100];
+	sscanf(line, "%s \t%s \t\n", all_rfo_count, all_rfo_str);
 }
 
 double extract_communication_count(char *line, int communication_type)
@@ -81,12 +80,22 @@ read_line(FILE *fin) {
     return NULL;
 }
 
+void removeChar(char str[100], char garbage) {
+
+    char *src, *dst;
+    for (src = dst = str; *src != '\0'; src++) {
+        *dst = *src;
+        if (*dst != garbage) dst++;
+    }
+    *dst = '\0';
+}
+
 int
 main(int argc, char *argv[]) {
     FILE *fin;
     char *line;
     char comdetective_stats[20] = "COMDETECTIVE STATS:";
-    char all_rfo_str[10] = "re224";
+    char all_rfo_str[10] = "r430864";
     if ( argc != 3 ) {
         return EXIT_FAILURE;
     }
@@ -99,8 +108,10 @@ main(int argc, char *argv[]) {
 	if(communication_type == ALL_RFO) {
 		while ( line = read_line(fin) ) {
             		if ( strstr(line, all_rfo_str) ){
-				long d = extract_all_rfo_count(line);
-				printf("%ld\n", d);
+				char num[100];
+				extract_all_rfo_count(line, num);
+				removeChar(num, '.');
+				printf("%s\n", num);
             		}
             		free(line);
         	}
